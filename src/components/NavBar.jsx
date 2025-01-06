@@ -2,11 +2,8 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuItem,
-  MenuItems,
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import Logo from "../assets/vertical-logo.png";
 
@@ -14,6 +11,7 @@ const navigation = [
   { name: "Home", to: "/", current: true },
   { name: "Gallery", to: "/gallery", current: false },
   { name: "About", to: "/about", current: false },
+  { name: "Contact", to: "/contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -22,33 +20,34 @@ function classNames(...classes) {
 
 export default function NavBar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-red-400">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          {/* MOBILE MENU BUTTON (LEFT SIDE) */}
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon
-                aria-hidden="true"
-                className="block h-6 w-6 group-data-[open]:hidden"
-              />
-              <XMarkIcon
-                aria-hidden="true"
-                className="hidden h-6 w-6 group-data-[open]:block"
-              />
-            </DisclosureButton>
-          </div>
-
-          {/* LOGO + DESKTOP NAV LINKS */}
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            {/* LOGO */}
-            <div className="flex shrink-0 items-center">
-              <img alt="Your Company" src={Logo} className="h-40 w-auto" />
+        {/* NAVBAR CONTAINER (flex, h-16) */}
+        <div className="relative flex h-16 items-center">
+          {/* LEFT SECTION (Mobile Menu Button + Desktop Nav) */}
+          <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
+            {/* MOBILE MENU BUTTON (VISIBLE ONLY ON SMALL SCREENS) */}
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <DisclosureButton
+                className="group relative inline-flex items-center justify-center 
+                           rounded-md p-2 text-black hover:bg-gray-800 hover:text-red-300 
+                           focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              >
+                <span className="absolute -inset-0.5" />
+                <span className="sr-only">Open main menu</span>
+                <Bars3Icon
+                  aria-hidden="true"
+                  className="block h-6 w-6 group-data-[open]:hidden"
+                />
+                <XMarkIcon
+                  aria-hidden="true"
+                  className="hidden h-6 w-6 group-data-[open]:block"
+                />
+              </DisclosureButton>
             </div>
-            {/* DESKTOP NAV */}
-            <div className="hidden sm:ml-6 sm:block">
+
+            {/* DESKTOP NAV LINKS (HIDDEN ON SMALL SCREENS) */}
+            <div className="hidden sm:ml-6 sm:flex">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
                   <Link
@@ -69,48 +68,11 @@ export default function NavBar() {
             </div>
           </div>
 
-          {/* RIGHT SIDE ICONS (NOTIFICATIONS, PROFILE, ETC.) */}
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
-              <MenuItems
-                transition
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right 
-                           rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 
-                           transition focus:outline-none 
-                           data-[closed]:scale-95 data-[closed]:transform 
-                           data-[closed]:opacity-0 data-[enter]:duration-100 
-                           data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
-              >
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 
-                               data-[focus]:bg-gray-100 data-[focus]:outline-none"
-                  >
-                    Your Profile
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 
-                               data-[focus]:bg-gray-100 data-[focus]:outline-none"
-                  >
-                    Settings
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 
-                               data-[focus]:bg-gray-100 data-[focus]:outline-none"
-                  >
-                    Sign out
-                  </a>
-                </MenuItem>
-              </MenuItems>
-            </Menu>
+          {/* CENTER SECTION (LOGO, ONLY VISIBLE ON SM+ SCREENS) */}
+
+          <div className="flex flex-1 items-center justify-center">
+            <img alt="Magic Munchies" src={Logo} className="h-36 w-auto" />
+            {/* Adjust width/height to your preference */}
           </div>
         </div>
       </div>

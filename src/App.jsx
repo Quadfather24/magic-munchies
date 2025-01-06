@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
 
         {/* This route matches "/about" and renders <About /> */}
         <Route path="/about" element={<About />} />
+
+        {/* This route matches "/contact" and renders <About /> */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
