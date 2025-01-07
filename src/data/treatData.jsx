@@ -6,36 +6,34 @@ export const treatCategories = [
       {
         key: 1,
         imageSrc: "/src/assets/images/cookies/6-sun-cookie.jpg",
-        title: "Sunflower Cookies 1/2 Dzn",
-        description: "Hand-decorated sugar cookies with a sunny design.",
+        title: "Sunflower",
+        description: "Hand-decorated sugar cookies with a sunny design 😊",
       },
       {
         key: 2,
         imageSrc: "/src/assets/images/cookies/aggie-cookies.jpg",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        title: "Texas A&M",
+        description: "My aggie themed cookies for a 30-year old birthday! 🎂",
       },
       {
         key: 3,
         imageSrc: "/src/assets/images/cookies/roblox.jpg",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        title: "Roblox",
+        description: "Roblox themed cookies for 6-year old Evan 🎂",
       },
       {
         key: 4,
         imageSrc: "/src/assets/images/cookies/sweet-15.jpg",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
+        title: "Strawberry",
         description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+          "Amazing sweet 15 strawberry & birthday themed cookies, You only turn 15 once!",
       },
       {
         key: 5,
         imageSrc: "/src/assets/images/cookies/texasState.jpg",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
+        title: "Texas State",
         description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+          "Texas State themed chocolate covered cookies for that long awaited graduation 🎓",
       },
       {
         key: 6,

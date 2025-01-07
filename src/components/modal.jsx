@@ -1,24 +1,31 @@
 import PropTypes from "prop-types";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import { useSwipeable } from "react-swipeable";
 
-const TreatModal = ({ isOpen, onClose, slide }) => {
+const TreatModal = ({ isOpen, onClose, slide, onPrev, onNext }) => {
+  const features = [{ name: "Description", description: slide.description }];
+
+  // swipe handlers at top for mobile touch handling
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => onNext && onNext(),
+    onSwipedRight: () => onPrev && onPrev(),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: false,
+  });
+
+  // conditional hook after hook init
   if (!isOpen || !slide) return null;
-
-  // Example features (replace or extend based on your data structure)
-  const features = [
-    { name: "Name", description: slide.title },
-    { name: "Description", description: slide.description },
-  ];
 
   return (
     <div
+      {...swipeHandlers}
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
       onClick={onClose}
     >
       <div
         className="relative bg-magicPeach rounded-lg p-6 max-w-7xl w-full mx-4 overflow-auto max-h-[90vh]"
-        onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
@@ -34,8 +41,7 @@ const TreatModal = ({ isOpen, onClose, slide }) => {
             <h2 className="text-3xl py-4 font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
               {slide.title}
             </h2>
-            {/* Feature List */}
-            <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+            <dl className="mt-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 sm:gap-y-16 lg:gap-x-8">
               {features.map((feature) => (
                 <div
                   key={feature.name}
@@ -59,7 +65,7 @@ const TreatModal = ({ isOpen, onClose, slide }) => {
                   <ChevronDownIcon className="h-5 w-5 mt-4 text-gray-500 transform animate-bounceWithRotateReverse" />
                   <ChevronDownIcon className="h-5 w-5 mt-4 text-gray-500 transform animate-bounceWithRotateNormal" />
                 </div>
-                <dd className=" cursor-pointer text-4xl">
+                <dd className="cursor-pointer text-4xl">
                   <Link to="/contact">
                     <button className="px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg hover:ring-4 hover:ring-teal-400 hover:text-magicPeach transition duration-300">
                       Click Here
@@ -92,6 +98,8 @@ TreatModal.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }),
+  onPrev: PropTypes.func, // optional, based on swipe usage
+  onNext: PropTypes.func, // optional, based on swipe usage
 };
 
 export default TreatModal;
