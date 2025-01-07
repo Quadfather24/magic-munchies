@@ -30,7 +30,7 @@ export const treatCategories = [
       },
       {
         key: 5,
-        imageSrc: "/src/assets/images/cookies/texasState.jpg",
+        imageSrc: "/src/assets/images/cookies/pig.jpg",
         title: "Texas State",
         description:
           "Texas State themed chocolate covered cookies for that long awaited graduation 🎓",
@@ -38,107 +38,98 @@ export const treatCategories = [
       {
         key: 6,
         imageSrc: "/src/assets/images/cookies/unicorn-cookies.jpg",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        title: "Unicorn",
+        description: "Magical unicorn cookies w/ rainbows.",
       },
       {
         key: 7,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/badbunny.jpg",
+        title: "Bad Bunny",
+        description: "",
       },
       {
         key: 8,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/horror.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 9,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/flower.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 10,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/allstar-cookies.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 11,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/baseball.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 12,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/butterfly.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 13,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/dino.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 14,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/grad-ccokies.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 15,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/halloween-cookie.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 16,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/ninjaTurtle.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 17,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/halloween2.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 18,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/pink-dipped.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 19,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/tuxedo.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 20,
-        imageSrc: "/src/assets/images/cookies/",
-        title: "Classic Chocolate Chip Cookies 1 Dzn",
-        description:
-          "Our signature chocolate chip cookies made with premium chocolate.",
+        imageSrc: "/src/assets/images/cookies/white.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 21,
+        imageSrc: "/src/assets/images/cookies/spider-cake.jpg",
+        title: "",
+        description: "",
       },
     ],
   },
@@ -148,17 +139,63 @@ export const treatCategories = [
     slides: [
       {
         key: 1,
-        imageSrc: "/src/assets/images/cakes/chocolate-dream.jpg",
-        title: "Chocolate Dream Cake",
-        description:
-          "Three layers of rich chocolate cake with ganache filling.",
+        imageSrc: "/src/assets/images/cakes/aggie-cake.jpg",
+        title: "Aggie",
+        description: "",
       },
       {
         key: 2,
-        imageSrc: "/src/assets/images/cakes/red-velvet.jpg",
-        title: "Red Velvet Cake",
-        description:
-          "A moist red velvet cake topped with cream cheese frosting.",
+        imageSrc: "/src/assets/images/cakes/aggiecake-grad.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 3,
+        imageSrc: "/src/assets/images/cakes/disney-cake.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 4,
+        imageSrc: "/src/assets/images/cakes/25.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 5,
+        imageSrc: "/src/assets/images/cakes/spngebob-cake.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 6,
+        imageSrc: "/src/assets/images/cakes/spongebob-cake.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 7,
+        imageSrc: "/src/assets/images/cakes/",
+        title: "",
+        description: "",
+      },
+      {
+        key: 8,
+        imageSrc: "/src/assets/images/cakes/",
+        title: "",
+        description: "",
+      },
+      {
+        key: 9,
+        imageSrc: "/src/assets/images/cakes/",
+        title: "",
+        description: "",
+      },
+      {
+        key: 10,
+        imageSrc: "/src/assets/images/cakes/",
+        title: "",
+        description: "",
       },
     ],
   },
@@ -168,17 +205,147 @@ export const treatCategories = [
     slides: [
       {
         key: 1,
-        imageSrc: "/src/assets/images/cakes/chocolate-dream.jpg",
-        title: "Chocolate Dream Cake",
-        description:
-          "Three layers of rich chocolate cake with ganache filling.",
+        imageSrc: "/src/assets/images/pretzels/butterfly-pretz.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 2,
-        imageSrc: "/src/assets/images/cakes/red-velvet.jpg",
-        title: "Red Velvet Cake",
-        description:
-          "A moist red velvet cake topped with cream cheese frosting.",
+        imageSrc: "/src/assets/images/pretzels/choc-pretz.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 3,
+        imageSrc: "/src/assets/images/pretzels/pretzel1.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 4,
+        imageSrc: "/src/assets/images/pretzels/spiderMan.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 5,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 6,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 7,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 8,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 9,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+    ],
+  },
+  {
+    id: "strawberries",
+    title: "Strawberries",
+    slides: [
+      {
+        key: 1,
+        imageSrc: "/src/assets/images/strawberries/choc-dipped-pink.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 2,
+        imageSrc: "/src/assets/images/strawberries/choc-dipped-heart.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 3,
+        imageSrc: "/src/assets/images/strawberries/choc-straw-gold.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 4,
+        imageSrc: "/src/assets/images/strawberries/chocStraw-blood.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 5,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 6,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 7,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 8,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 9,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+      {
+        key: 10,
+        imageSrc: "/src/assets/images",
+        title: "",
+        description: "",
+      },
+    ],
+  },
+  {
+    id: "cakepops",
+    title: "Cake Pops",
+    slides: [
+      {
+        key: 1,
+        imageSrc: "/src/assets/images/cake-pops/minnie.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 2,
+        imageSrc: "/src/assets/images/cake-pops",
+        title: "",
+        description: "",
+      },
+      {
+        key: 3,
+        imageSrc: "/src/assets/images/cake-pops",
+        title: "",
+        description: "",
       },
     ],
   },
@@ -188,17 +355,33 @@ export const treatCategories = [
     slides: [
       {
         key: 1,
-        imageSrc: "/src/assets/images/cakes/chocolate-dream.jpg",
-        title: "Chocolate Dream Cake",
-        description:
-          "Three layers of rich chocolate cake with ganache filling.",
+        imageSrc: "/src/assets/images/cupcakes/minnieCupcake.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 2,
-        imageSrc: "/src/assets/images/cakes/red-velvet.jpg",
-        title: "Red Velvet Cake",
-        description:
-          "A moist red velvet cake topped with cream cheese frosting.",
+        imageSrc: "/src/assets/images/cupcakes/naruto-cupcake.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 3,
+        imageSrc: "/src/assets/images/cupcakes/crossCupcake.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 4,
+        imageSrc: "/src/assets/images/cupcakes/paw-cupcakes.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 5,
+        imageSrc: "/src/assets/images/cupcakes/naruto-cupcake.jpg",
+        title: "",
+        description: "",
       },
     ],
   },
@@ -208,17 +391,88 @@ export const treatCategories = [
     slides: [
       {
         key: 1,
-        imageSrc: "/src/assets/images/cakes/chocolate-dream.jpg",
-        title: "Chocolate Dream Cake",
-        description:
-          "Three layers of rich chocolate cake with ganache filling.",
+        imageSrc: "/src/assets/images/specialty/cheese-cone-drizzle.jpg",
+        title: "",
+        description: "",
       },
       {
         key: 2,
-        imageSrc: "/src/assets/images/cakes/red-velvet.jpg",
-        title: "Red Velvet Cake",
-        description:
-          "A moist red velvet cake topped with cream cheese frosting.",
+        imageSrc: "/src/assets/images/specialty/banana-pudding.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 3,
+        imageSrc: "/src/assets/images/specialty/cheescake-cone.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 4,
+        imageSrc: "/src/assets/images/specialty/cheesecake-bowl.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 5,
+        imageSrc: "/src/assets/images/specialty/cheesecake1.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 6,
+        imageSrc: "/src/assets/images/specialty/rice-crispy-drizzle.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 7,
+        imageSrc: "/src/assets/images/specialty/goldApple.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 8,
+        imageSrc: "/src/assets/images/",
+        title: "",
+        description: "",
+      },
+    ],
+  },
+
+  {
+    id: "assortments",
+    title: "Assortments",
+    slides: [
+      {
+        key: 1,
+        imageSrc: "/src/assets/images/assortments/specialty.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 2,
+        imageSrc: "/src/assets/images/assortments/assorted.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 3,
+        imageSrc: "/src/assets/images/assortments/assorted1.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 4,
+        imageSrc: "/src/assets/images/assortments/texasState.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 5,
+        imageSrc: "/src/assets/images/assortments/",
+        title: "",
+        description: "",
       },
     ],
   },

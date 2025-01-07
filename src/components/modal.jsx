@@ -68,7 +68,7 @@ const TreatModal = ({ isOpen, onClose, slide, onPrev, onNext }) => {
                 <dd className="cursor-pointer text-4xl">
                   <Link to="/contact">
                     <button className="px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg hover:ring-4 hover:ring-teal-400 hover:text-magicPeach transition duration-300">
-                      Click Here
+                      Order
                     </button>
                   </Link>
                 </dd>
