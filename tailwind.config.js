@@ -10,6 +10,10 @@ export default {
       backgroundImage: {
         "magic-gradient": "linear-gradient(135deg, #ffb6a1, #fff4e6, #f97c7c)",
       },
+      fontFamily: {
+        roboto: ["Roboto", "ui-sans-serif", "system-ui"],
+        sourGummy: ["Sour Gummy", "serif"],
+      },
     },
   },
   plugins: [],
