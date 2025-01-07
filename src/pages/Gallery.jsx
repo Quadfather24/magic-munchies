@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TreatCarousel from "../components/carousel";
-import ImageModal from "../components/modal";
+import TreatModal from "../components/modal";
 import { treatCategories } from "../data/treatData";
 
 export default function Menu() {
@@ -18,7 +18,7 @@ export default function Menu() {
   };
 
   return (
-    <div className="min-h-screen bg-magic-gradient">
+    <div className="min-h-screen">
       {treatCategories.map((category) => (
         <TreatCarousel
           key={category.id}
@@ -27,12 +27,10 @@ export default function Menu() {
         />
       ))}
       {selectedSlide && (
-        <ImageModal
+        <TreatModal
           isOpen={isModalOpen}
           onClose={closeModal}
-          src={selectedSlide.imageSrc}
-          alt={selectedSlide.title}
-          description={selectedSlide.description}
+          slide={selectedSlide}
         />
       )}
     </div>

@@ -3,6 +3,7 @@
 // import dipStraw from "./assets/dipped-strawberry.png";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LogoHeader from "./components/LogoHeader";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
@@ -12,6 +13,7 @@ import Contact from "./pages/Contact";
 export default function App() {
   return (
     <Router>
+      <LogoHeader />
       <NavBar />
       <Routes>
         {/* This route matches "/" exactly and renders <Home /> */}
