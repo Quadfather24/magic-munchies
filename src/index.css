@@ -24,6 +24,17 @@
     background-attachment: fixed;
   }
 
+  /* Base slide animation classes */
+  .slide-element {
+    will-change: transform, opacity;
+  }
+
+  /* When element becomes visible */
+  .slide-element.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
