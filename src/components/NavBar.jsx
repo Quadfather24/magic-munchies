@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Disclosure,
   DisclosureButton,
@@ -7,6 +6,7 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/images/logo/vertical-logo.png";
+import Logo2 from "../assets/images/logo/logo.png";
 
 const navigation = [
   { name: "Home", to: "/", current: true },
@@ -51,9 +51,9 @@ export default function NavBar() {
               <div className="relative flex-1">
                 <div className="flex justify-center items-center sm:hidden">
                   <img
-                    src={Logo}
+                    src={Logo2}
                     alt="Magic Munchies"
-                    className="h-40 w-auto"
+                    className="h-20 w-auto p-1 "
                   />
                 </div>
               </div>

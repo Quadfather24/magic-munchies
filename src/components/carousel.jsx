@@ -34,7 +34,7 @@ const TreatCarousel = ({ category, onSlideClick }) => {
         <img
           src={slide.imageSrc}
           alt={slide.title}
-          className="w-full h-auto max-h-[400px] object-cover rounded-lg shadow-md shadow-gray-900 "
+          className="w-full h-auto md:h-96 object-cover rounded-lg shadow-md shadow-gray-900 "
           loading="lazy"
         />
       </div>

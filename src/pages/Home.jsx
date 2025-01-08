@@ -1,12 +1,66 @@
 import { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import landImage1 from "../assets/images/parralax/landImage1.jpg";
+import sprinkles from "../assets/images/parralax/sprinkles.webp";
 
-const landingPage = () => {
+const LandingPage = () => {
   const ref = useRef();
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div style={{ height: "100vh", width: "100vh", overflow: "hidden" }}>
       <Parallax pages={3} ref={ref}>
+        {/* Middle Page Content */}
+        <ParallaxLayer
+          offset={1}
+          speed={0}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundImage: `url(${landImage1})`, // Use the imported module here
+
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <h1>Middle of the Page</h1>
+        </ParallaxLayer>
+
+        {/* Top Layer - Moves upward on scroll */}
+        <ParallaxLayer
+          offset={0.5} // Starting near the middle
+          speed={-1.5} // Negative speed for upward movement
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            pointerEvents: "none", // Ensure layer doesn't block scroll
+            // backgroundImage: `url(${})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div style={{ padding: "2rem", background: "#ffdead" }}>
+            <p>Top Layer Content</p>
+          </div>
+        </ParallaxLayer>
+
+        {/* Bottom Layer - Moves downward on scroll */}
+        <ParallaxLayer
+          offset={0.5} // Starting near the middle
+          speed={1.5} // Positive speed for downward movement
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            pointerEvents: "none",
+          }}
+        >
+          <div style={{ padding: "2rem", background: "#add8e6" }}>
+            <p>Bottom Layer Content</p>
+          </div>
+        </ParallaxLayer>
+
         {/* First Page */}
         <ParallaxLayer
           offset={0}
@@ -15,32 +69,33 @@ const landingPage = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-          }}
-        >
-          <p style={{ fontSize: "2rem", color: "#333" }}>
-            Layers can contain anything
-          </p>
-        </ParallaxLayer>
+            backgroundImage: `url(${landImage1})`, // Use the imported module here
 
-        {/* Second Page with Horizontal Scroll */}
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></ParallaxLayer>
+
+        {/* Second Page */}
         <ParallaxLayer
           offset={1}
           speed={-2}
           factor={1.5}
-          horizontal
           style={{ backgroundColor: "#f0f0f0" }}
         >
           <div
+            className="responsive-container"
             style={{
               display: "flex",
               height: "100%",
               alignItems: "center",
               justifyContent: "center",
+              backgroundImage: `url(${sprinkles})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
-            <p style={{ fontSize: "2rem", color: "#333" }}>
-              Horizontal Scrolling Layer
-            </p>
+            <p className="parallax-text">Vertical Scrolling Layer</p>
           </div>
         </ParallaxLayer>
 
@@ -54,7 +109,7 @@ const landingPage = () => {
             backgroundColor: "rgba(255, 255, 255, 0.8)",
           }}
         >
-          <p style={{ fontSize: "2rem", color: "#333" }}>I am a sticky layer</p>
+          <p className="parallax-text">I am a sticky layer</p>
         </ParallaxLayer>
 
         {/* Third Page */}
@@ -66,26 +121,10 @@ const landingPage = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-        >
-          <button
-            onClick={() => ref.current.scrollTo(0)}
-            style={{
-              padding: "1rem 2rem",
-              fontSize: "1rem",
-              cursor: "pointer",
-              border: "none",
-              borderRadius: "5px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              zIndex: 20,
-            }}
-          >
-            Scroll to top
-          </button>
-        </ParallaxLayer>
+        ></ParallaxLayer>
       </Parallax>
     </div>
   );
 };
 
-export default landingPage;
+export default LandingPage;
