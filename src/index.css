@@ -24,15 +24,33 @@
     background-attachment: fixed;
   }
 
-  /* Base slide animation classes */
+  /* Base styles for sliding elements */
   .slide-element {
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
     will-change: transform, opacity;
+  }
+
+  /* Offscreen to the left */
+  .slide-left {
+    transform: translateX(-100%);
+  }
+
+  /* Offscreen to the right */
+  .slide-right {
+    transform: translateX(100%);
   }
 
   /* When element becomes visible */
   .slide-element.show {
     transform: translateX(0);
     opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .sticky {
+      position: relative; /* Allow smooth scrolling on small screens */
+    }
   }
 
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

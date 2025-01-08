@@ -9,15 +9,16 @@ function ContactPage() {
           // When an element enters the viewport
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
-            // Once shown, stop observing
-            observer.unobserve(entry.target);
+          } else {
+            // Remove the 'show' class when the element leaves the viewport
+            entry.target.classList.remove("show");
           }
         });
       },
       {
         root: null,
-        threshold: 0.1, // Trigger when just 10% is visible
-        rootMargin: "-50px",
+        threshold: 0, // Trigger when just 10% is visible
+        rootMargin: "-150px",
       }
     );
 
@@ -31,16 +32,16 @@ function ContactPage() {
   return (
     <div className="min-h-screen w-full bg-magic-gradient overflow-x-hidden">
       {/* Hero Section */}
-      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-phoneImage  bg-cover bg-center bg-no-repeat ">
+      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage  bg-cover bg-center bg-no-repeat ">
         <div className="text-center animate-fade-in">
-          <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r text-teal-200 mb-4">
+          <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-magicPink mb-4">
             Let's Connect
           </h1>
-          <p className="text-teal-200 text-xl">
-            Scroll down to discover all the ways to reach us
+          <p className="text-black text-xl">
+            Scroll down to discover all the ways
           </p>
           <div className="mt-8 animate-bounce">
-            <span className="text-teal-200 text-4xl">↓</span>
+            <span className="text-black text-4xl">↓</span>
           </div>
         </div>
       </div>
