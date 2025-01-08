@@ -5,8 +5,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/images/logo/vertical-logo.png";
-import Logo2 from "../assets/images/logo/logo.png";
+import Logo2 from "../assets/images/logo/logo2.svg";
 
 const navigation = [
   { name: "Home", to: "/", current: true },
@@ -53,7 +52,7 @@ export default function NavBar() {
                   <img
                     src={Logo2}
                     alt="Magic Munchies"
-                    className="h-20 w-auto p-1 "
+                    className="h-24 w-auto mt-4 mr-12"
                   />
                 </div>
               </div>
