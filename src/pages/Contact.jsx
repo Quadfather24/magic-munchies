@@ -18,7 +18,7 @@ function ContactPage() {
       {
         root: null,
         threshold: 0, // Trigger when just 10% is visible
-        rootMargin: "-150px",
+        rootMargin: "0px",
       }
     );
 
@@ -32,9 +32,9 @@ function ContactPage() {
   return (
     <div className="min-h-screen w-full bg-magic-gradient overflow-x-hidden">
       {/* Hero Section */}
-      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage  bg-cover bg-center bg-no-repeat ">
+      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage bg-cover bg-center bg-no-repeat ">
         <div className="text-center animate-fade-in">
-          <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-magicPink mb-4">
+          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-magicPink mb-4">
             Let's Connect
           </h1>
           <p className="text-black text-xl">
