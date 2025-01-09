@@ -4,6 +4,7 @@ import { useSpring, animated } from "@react-spring/web";
 import landingpage1 from "../assets/images/parralax/landingPage1.svg";
 import landingpage2 from "../assets/images/parralax/landingPage2.svg";
 import landingpage3 from "../assets/images/parralax/landingPage3.svg";
+import landingpage4 from "../assets/images/parralax/landingPage4.svg";
 
 const SectionHeader = ({ title, subtitle }) => (
   <div className="text-center space-y-4">
@@ -104,33 +105,17 @@ const LandingPage = () => {
         <ParallaxLayer
           offset={2}
           speed={1.2}
-          className="flex flex-col justify-center items-center max-w-none bg-yellow-300"
+          className="flex flex-col justify-center items-center max-w-none bg-magicPurple"
         >
-          <div className="w-full max-w-4xl px-4 md:px-8">
-            <SectionHeader
-              title="Get in Touch"
-              subtitle="Let's create something amazing together"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              {["Contact Us", "Our Services", "Support"].map((title, i) => (
-                <animated.div
-                  key={i}
-                  style={float}
-                  className="bg-white p-6 rounded-xl shadow-xl hover:scale-105 transform transition-all"
-                >
-                  <h3 className="text-xl font-semibold text-black mb-4">
-                    {title}
-                  </h3>
-                  <p className="text-gray-600">
-                    Explore how we can assist you in achieving your goals.
-                  </p>
-                  <button className="mt-4 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-2 rounded-lg hover:scale-105 transform transition-all">
-                    Learn More
-                  </button>
-                </animated.div>
-              ))}
+          <animated.div className="w-full h-full flex justify-center items-center relative">
+            <div className="relative w-full h-full mx-auto">
+              <img
+                src={landingpage4}
+                alt="menu Background"
+                className="w-full h-full object-cover lg:object-contain max-h-dvh bg-magicPurple"
+              />
             </div>
-          </div>
+          </animated.div>
         </ParallaxLayer>
 
         {/* Navigation Dots */}

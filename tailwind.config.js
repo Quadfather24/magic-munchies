@@ -7,6 +7,7 @@ export default {
         magicPeach: "#ffb6a1",
         magicPink: "#f97c7c",
         magicTeal: "#5CE0E6",
+        magicPurple: "#F84FFFE3",
       },
       backgroundImage: {
         "magic-gradient": "linear-gradient(135deg, #ffb6a1, #fff4e6, #f97c7c)",

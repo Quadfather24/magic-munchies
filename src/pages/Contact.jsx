@@ -47,20 +47,20 @@ function ContactPage() {
       <div className="relative z-20 px-4 py-12 space-y-32">
         {/* Facebook Section */}
         <div className="slide-element slide-left max-w-4xl mx-auto opacity-0 -translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20  p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-blue-700">
+          <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20  p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-white">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-blue-600 text-5xl">
                 <i className="fab fa-facebook animate-pulse"></i>
               </div>
-              <h2 className="text-2xl font-bold text-blue-800">
+              <h2 className="text-2xl font-bold text-white">
                 Connect on Facebook
               </h2>
-              <p className="text-blue-600 text-lg max-w-md text-center">
+              <p className="text-white text-lg max-w-md text-center">
                 Join our community for updates and special offers!
               </p>
               <a
                 href="#"
-                className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 hover:ring-2 hover:ring-blue-700"
+                className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 hover:ring-2 hover:ring-white"
               >
                 Visit Our Page
               </a>
@@ -70,18 +70,18 @@ function ContactPage() {
 
         {/* Email Section */}
         <div className="slide-element slide-right max-w-4xl mx-auto opacity-0 translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-yellow-700">
+          <div className="bg-gradient-to-br from-magicTeal/20 to-slate-800/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-black">
             <div className="flex flex-col items-center space-y-4">
-              <div className="text-yellow-600 text-5xl">
+              <div className="text-white text-5xl">
                 <i className="far fa-envelope animate-bounce"></i>
               </div>
-              <h2 className="text-2xl font-bold text-yellow-800">Email Us</h2>
-              <p className="text-yellow-700 text-lg max-w-md text-center">
+              <h2 className="text-2xl font-bold text-white">Email Us</h2>
+              <p className="text-white text-lg max-w-md text-center">
                 Have a question? Drop us a line anytime!
               </p>
               <a
                 href="mailto:claudiastreats21@gmail.com"
-                className="mt-2 px-6 py-2 bg-yellow-600 text-white rounded-full font-semibold hover:bg-yellow-700 hover:ring-2 hover:ring-yellow-800 transition-colors duration-300"
+                className="mt-2 px-6 py-2 bg text-white rounded-full font-semibold bg-zinc-600 hover:text-black hover:bg-magicTeal hover:ring-2 hover:ring-white transition-colors duration-300"
               >
                 claudiastreats21@gmail.com
               </a>
@@ -91,18 +91,18 @@ function ContactPage() {
 
         {/* Phone Section */}
         <div className="slide-element slide-left max-w-4xl mx-auto opacity-0 -translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-1 hover:ring-green-700">
+          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-1 hover:ring-white">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-green-600 text-5xl">
                 <i className="fas fa-phone animate-wiggle"></i>
               </div>
-              <h2 className="text-2xl font-bold text-green-800">Call Us</h2>
-              <p className="text-green-700 text-lg max-w-md text-center">
+              <h2 className="text-2xl font-bold text-white">Call Us</h2>
+              <p className="text-white text-lg max-w-md text-center">
                 Need immediate assistance? We're just a call away!
               </p>
               <a
                 href="tel:+13616522470"
-                className="mt-2 px-6 py-2 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300 hover:ring-2 hover:ring-green-700"
+                className="mt-2 px-6 py-2 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300 hover:ring-2 hover:ring-white"
               >
                 +1 (361) 652-2470
               </a>
