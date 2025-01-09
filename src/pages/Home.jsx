@@ -1,9 +1,10 @@
 import { useRef, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useSpring, animated } from "@react-spring/web";
+import { FaLightbulb, FaRocket, FaHandshake } from "react-icons/fa";
 import landingpage1 from "../assets/images/parralax/landingPage1.svg";
 import landingpage2 from "../assets/images/parralax/landingPage2.svg";
-// import landingpage3 from "../assets/images/parralax/landingPage3.png";
+import landingpage3 from "../assets/images/parralax/landingPage3.svg";
 
 const SectionHeader = ({ title, subtitle }) => (
   <div className="text-center space-y-4">
@@ -101,34 +102,12 @@ const LandingPage = () => {
           speed={0.8}
           className="flex flex-col justify-center items-center"
           style={{
-            background: "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)",
+            backgroundImage: `url(${landingpage3})`, // Use the imported image variable
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
           }}
-        >
-          <div className="w-full max-w-6xl px-4 md:px-8">
-            <SectionHeader
-              title="Our Vision"
-              subtitle="Transform your ideas into reality with our innovative solutions"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-              <div className="space-y-6">
-                <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all">
-                  Learn More
-                </button>
-              </div>
-              <animated.div
-                style={float}
-                className="bg-white p-6 rounded-xl shadow-xl max-w-3xl mx-auto"
-              >
-                <img
-                  src={landingpage2} // Replace with appropriate asset
-                  alt="Features"
-                  className="w-full h-auto rounded-lg object-contain"
-                  loading="lazy"
-                />
-              </animated.div>
-            </div>
-          </div>
-        </ParallaxLayer>
+        ></ParallaxLayer>
 
         {/* Bottom Section */}
         <ParallaxLayer
@@ -145,36 +124,30 @@ const LandingPage = () => {
               subtitle="Let's create something amazing together"
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              {[1, 2, 3].map((i) => (
+              {["Contact Us", "Our Services", "Support"].map((title, i) => (
                 <animated.div
                   key={i}
                   style={float}
-                  className="bg-white p-6 rounded-xl shadow-xl hover:transform hover:scale-105 transition-all"
+                  className="bg-white p-6 rounded-xl shadow-xl hover:scale-105 transform transition-all"
                 >
-                  <h3 className="text-xl font-semibold mb-4">Feature {i}</h3>
+                  <h3 className="text-xl font-semibold text-black mb-4">
+                    {title}
+                  </h3>
                   <p className="text-gray-600">
-                    Discover how we can help you achieve your goals
+                    Explore how we can assist you in achieving your goals.
                   </p>
+                  <button className="mt-4 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-2 rounded-lg hover:scale-105 transform transition-all">
+                    Learn More
+                  </button>
                 </animated.div>
               ))}
             </div>
           </div>
         </ParallaxLayer>
 
-        {/* Floating Navigation Dots */}
-        <ParallaxLayer
-          sticky={{ start: 0, end: 2 }}
-          className="hidden md:flex flex-col items-end justify-center pr-8"
-        >
-          <div className="space-y-4">
-            {[0, 1, 2].map((i) => (
-              <FloatingButton
-                key={i}
-                index={i}
-                onClick={() => ref.current.scrollTo(i)}
-              />
-            ))}
-          </div>
+        {/* Navigation Dots */}
+        <ParallaxLayer sticky={{ start: 0, end: 2 }}>
+          {/* Navigation Buttons */}
         </ParallaxLayer>
       </Parallax>
     </div>
