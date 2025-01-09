@@ -30,16 +30,14 @@ function ContactPage() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-magic-gradient overflow-x-hidden">
+    <div className="min-h-screen w-full bg-teal-300  overflow-x-hidden">
       {/* Hero Section */}
-      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage bg-cover bg-center bg-no-repeat ">
+      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage bg-cover bg-center bg-no-repeat pt-10">
         <div className="text-center animate-fade-in">
-          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-magicPink mb-4">
+          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text mb-4">
             Let's Connect
           </h1>
-          <p className="text-black text-xl">
-            Scroll down to discover all the ways
-          </p>
+          <p className="text-teal-400 text-xl">Scroll down</p>
           <div className="mt-8 animate-bounce">
             <span className="text-black text-4xl">↓</span>
           </div>
@@ -49,7 +47,7 @@ function ContactPage() {
       <div className="relative z-20 px-4 py-12 space-y-32">
         {/* Facebook Section */}
         <div className="slide-element slide-left max-w-4xl mx-auto opacity-0 -translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20  p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-blue-700">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-blue-600 text-5xl">
                 <i className="fab fa-facebook animate-pulse"></i>
@@ -62,7 +60,7 @@ function ContactPage() {
               </p>
               <a
                 href="#"
-                className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300"
+                className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 hover:ring-2 hover:ring-blue-700"
               >
                 Visit Our Page
               </a>
@@ -72,7 +70,7 @@ function ContactPage() {
 
         {/* Email Section */}
         <div className="slide-element slide-right max-w-4xl mx-auto opacity-0 translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-yellow-700">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-yellow-600 text-5xl">
                 <i className="far fa-envelope animate-bounce"></i>
@@ -83,7 +81,7 @@ function ContactPage() {
               </p>
               <a
                 href="mailto:claudiastreats21@gmail.com"
-                className="mt-2 px-6 py-2 bg-yellow-600 text-white rounded-full font-semibold hover:bg-yellow-700 transition-colors duration-300"
+                className="mt-2 px-6 py-2 bg-yellow-600 text-white rounded-full font-semibold hover:bg-yellow-700 hover:ring-2 hover:ring-yellow-800 transition-colors duration-300"
               >
                 claudiastreats21@gmail.com
               </a>
@@ -93,7 +91,7 @@ function ContactPage() {
 
         {/* Phone Section */}
         <div className="slide-element slide-left max-w-4xl mx-auto opacity-0 -translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-1 hover:ring-green-700">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-green-600 text-5xl">
                 <i className="fas fa-phone animate-wiggle"></i>
@@ -104,7 +102,7 @@ function ContactPage() {
               </p>
               <a
                 href="tel:+13616522470"
-                className="mt-2 px-6 py-2 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300"
+                className="mt-2 px-6 py-2 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300 hover:ring-2 hover:ring-green-700"
               >
                 +1 (361) 652-2470
               </a>

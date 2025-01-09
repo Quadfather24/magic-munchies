@@ -1,7 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useSpring, animated } from "@react-spring/web";
-import landingpage1 from "../assets/images/parralax/landing-page1.svg";
+import landingpage1 from "../assets/images/parralax/landingPage1.svg";
+import landingpage2 from "../assets/images/parralax/landingPage2.svg";
+// import landingpage3 from "../assets/images/parralax/landingPage3.png";
 
 const SectionHeader = ({ title, subtitle }) => (
   <div className="text-center space-y-4">
@@ -48,14 +50,23 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="h-screen w-screen overflow-hidden">
+    <div
+      className="h-screen w-screen overflow-hidden mx-auto max-w-none bg-black bg-opacity-30 z-20"
+      style={{
+        backgroundImage: `url(${landingpage2})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <Parallax pages={3} ref={ref}>
         {/* Hero Section */}
         <ParallaxLayer
           offset={0}
           speed={0.5}
           factor={1}
-          className="flex flex-col justify-center items-center relative overflow-hidden"
+          className="flex flex-col justify-center items-center relative overflow-hidden max-w-none "
         >
           <animated.div
             style={fadeIn}
@@ -67,17 +78,17 @@ const LandingPage = () => {
                 alt="Hero Background"
                 className="w-full h-full object-cover"
                 loading="lazy"
-                style={{ maxHeight: "100vh" }}
+                // style={{ maxHeight: "100vh" }}
               />
             </div>
             <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-5 z-10">
               <animated.h1
                 style={float}
-                className="text-4xl md:text-6xl lg:text-7xl text-teal-400 font-bold mt-[503px]"
+                className="text-4xl md:text-6xl lg:text-7xl text-teal-300 font-bold pt-[688px]"
               >
                 Welcome
               </animated.h1>
-              <animated.p className="text-xl md:text-2xl text-teal-400 max-w-2xl text-center px-4">
+              <animated.p className="text-xl md:text-2xl text-black max-w-2xl text-center px-4">
                 Scroll to explore our journey
               </animated.p>
             </div>
@@ -109,7 +120,7 @@ const LandingPage = () => {
                 className="bg-white p-6 rounded-xl shadow-xl max-w-3xl mx-auto"
               >
                 <img
-                  src={landingpage1} // Replace with appropriate asset
+                  src={landingpage2} // Replace with appropriate asset
                   alt="Features"
                   className="w-full h-auto rounded-lg object-contain"
                   loading="lazy"

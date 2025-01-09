@@ -9,7 +9,7 @@ export default {
       },
       backgroundImage: {
         "magic-gradient": "linear-gradient(135deg, #ffb6a1, #fff4e6, #f97c7c)",
-        contactImage: "url('./src/assets/images/background/contact.webp')",
+        contactImage: "url('./src/assets/images/background/contact.jpeg')",
       },
       fontFamily: {
         roboto: ["Roboto", "ui-sans-serif", "system-ui"],
