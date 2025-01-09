@@ -19,7 +19,7 @@
     /* display: flex; */
     /* place-items: center; */
     min-width: 320px;
-    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   /* Base styles for sliding elements */
@@ -170,6 +170,59 @@
         }
       }
     }
+  }
+  /* Parallax Layers */
+  .parallax-layer {
+    position: relative;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* Animations */
+  .slide-element {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+  }
+
+  .slide-element.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-right {
+    transform: translateX(100%);
+  }
+
+  /* Content Box Styling */
+  .content-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .content-box h2 {
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+
+  .content-box a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .content-box a:hover {
+    background-color: #0056b3;
   }
 
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
