@@ -30,14 +30,14 @@ function ContactPage() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-teal-300  overflow-x-hidden">
+    <div className="min-h-screen  w-full h-full mx-auto bg-contactImage1 bg-cover bg-center bg-no-repeat overflow-x-hidden">
       {/* Hero Section */}
-      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage bg-cover bg-center bg-no-repeat pt-10">
+      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage bg-contain bg-center bg-no-repeat bg-magicTeal">
         <div className="text-center animate-fade-in">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text mb-4">
             Let's Connect
           </h1>
-          <p className="text-teal-400 text-xl">Scroll down</p>
+          <p className="text-black text-xl">Scroll down</p>
           <div className="mt-8 animate-bounce">
             <span className="text-black text-4xl">↓</span>
           </div>

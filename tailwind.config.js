@@ -6,10 +6,12 @@ export default {
       colors: {
         magicPeach: "#ffb6a1",
         magicPink: "#f97c7c",
+        magicTeal: "#5CE0E6",
       },
       backgroundImage: {
         "magic-gradient": "linear-gradient(135deg, #ffb6a1, #fff4e6, #f97c7c)",
-        contactImage: "url('./src/assets/images/background/contact.jpeg')",
+        contactImage: "url('./src/assets/images/background/contact.svg')",
+        contactImage1: "url('./src/assets/images/background/contact1.svg')",
       },
       fontFamily: {
         roboto: ["Roboto", "ui-sans-serif", "system-ui"],

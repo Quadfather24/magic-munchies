@@ -63,7 +63,6 @@
         font-size: 1.5rem; /* Smaller font on small screens */
       }
 
-      /* If you had images, ensure they scale properly */
       .responsive-image {
         width: 100%;
         height: auto;

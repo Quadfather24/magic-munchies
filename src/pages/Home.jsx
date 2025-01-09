@@ -1,7 +1,6 @@
 import { useRef, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useSpring, animated } from "@react-spring/web";
-import { FaLightbulb, FaRocket, FaHandshake } from "react-icons/fa";
 import landingpage1 from "../assets/images/parralax/landingPage1.svg";
 import landingpage2 from "../assets/images/parralax/landingPage2.svg";
 import landingpage3 from "../assets/images/parralax/landingPage3.svg";
@@ -28,7 +27,7 @@ const LandingPage = () => {
   const fadeIn = useSpring({
     from: { opacity: 0, transform: "translateY(20px)" },
     to: { opacity: 1, transform: "translateY(0)" },
-    config: { duration: 1000 },
+    config: { duration: 9000 },
   });
 
   const float = useSpring({
@@ -51,46 +50,38 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div
-      className="h-screen w-screen overflow-hidden mx-auto max-w-none bg-black bg-opacity-30 z-20"
-      style={{
-        backgroundImage: `url(${landingpage2})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    <div className="relative w-screen h-dvh overflow-hidden z-20">
+      <img
+        src={landingpage2}
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-10]" // Negative z-index to place it behind
+        alt="Background"
+      />
+
       <Parallax pages={3} ref={ref}>
         {/* Hero Section */}
         <ParallaxLayer
           offset={0}
           speed={0.5}
           factor={1}
-          className="flex flex-col justify-center items-center relative overflow-hidden max-w-none "
+          className="flex flex-col justify-center items-center relative overflow-hidden max-w-none"
         >
-          <animated.div
-            style={fadeIn}
-            className="w-full h-full flex justify-center items-center relative"
-          >
+          <animated.div className="w-full h-full flex justify-center items-center relative">
             <div className="relative w-full h-full mx-auto">
               <img
                 src={landingpage1}
                 alt="Hero Background"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                // style={{ maxHeight: "100vh" }}
+                className="w-full h-full object-cover lg:object-contain max-h-dvh bg-yellow-300"
               />
             </div>
-            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-5 z-10">
+            <div className="absolute inset-0 flex flex-col justify-end items-center  z-10">
               <animated.h1
                 style={float}
-                className="text-4xl md:text-6xl lg:text-7xl text-teal-300 font-bold pt-[688px]"
+                className="text-4xl md:text-6xl lg:text-7xl text-black font-bold"
               >
                 Welcome
               </animated.h1>
-              <animated.p className="text-xl md:text-2xl text-black max-w-2xl text-center px-4">
-                Scroll to explore our journey
+              <animated.p className="text-xl md:text-2xl text-magicPink max-w-2xl text-center px-4">
+                Scroll to explore More
               </animated.p>
             </div>
           </animated.div>
@@ -100,10 +91,10 @@ const LandingPage = () => {
         <ParallaxLayer
           offset={1}
           speed={0.8}
-          className="flex flex-col justify-center items-center"
+          className="flex flex-col justify-center items-center max-w-none bg-magicPink"
           style={{
-            backgroundImage: `url(${landingpage3})`, // Use the imported image variable
-            backgroundSize: "cover",
+            backgroundImage: `url(${landingpage3})`,
+            backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center",
           }}
@@ -113,10 +104,7 @@ const LandingPage = () => {
         <ParallaxLayer
           offset={2}
           speed={1.2}
-          className="flex flex-col justify-center items-center"
-          style={{
-            background: "linear-gradient(135deg, #ff6a00 0%, #ee0979 100%)",
-          }}
+          className="flex flex-col justify-center items-center max-w-none bg-yellow-300"
         >
           <div className="w-full max-w-4xl px-4 md:px-8">
             <SectionHeader
