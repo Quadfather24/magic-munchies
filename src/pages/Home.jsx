@@ -80,7 +80,7 @@ const LandingPage = () => {
               >
                 Welcome
               </animated.h1>
-              <animated.p className="text-xl md:text-2xl text-magicPink max-w-2xl text-center px-4">
+              <animated.p className="text-xl md:text-2xl text-magicPink max-wA-2xl text-center px-4">
                 Scroll to explore More
               </animated.p>
             </div>
