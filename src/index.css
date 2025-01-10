@@ -10,7 +10,6 @@
     @apply bg-magic-gradient min-h-screen;
     @apply font-sourGummy;
     scroll-behavior: smooth;
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -39,24 +38,7 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
-/* LandingPage.css */
 
-/* Base styling for parallax text */
-.parallax-text {
-  font-size: 2rem;
-  color: #333;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 600px) {
-  .parallax-text {
-    font-size: 1.5rem; /* Smaller font on small screens */
-  }
-
-  .responsive-container {
-    padding: 1rem;
-  }
   @keyframes gradient-animation {
     0% {
       background-position: 0% 50%;
@@ -75,16 +57,6 @@
     overflow: hidden;
   }
 
-  /* Parallax Layers */
-  .parallax-layer {
-    position: relative;
-    height: 100vh;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  /* Animations */
   .slide-element {
     opacity: 0;
     transform: translateX(-100%);

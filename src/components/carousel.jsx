@@ -1,4 +1,3 @@
-// src/components/carousel.jsx
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Carousel from "react-spring-3d-carousel";

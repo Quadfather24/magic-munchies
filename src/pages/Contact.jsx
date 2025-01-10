@@ -61,8 +61,9 @@ function ContactPage() {
               <p className="text-white text-lg max-w-md text-center">
                 Join our community for updates and special offers!
               </p>
+
               <a
-                href="#"
+                href="https://www.facebook.com/groups/265346302113024/?ref=share&mibextid=NSMWBT"
                 className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 hover:ring-2 hover:ring-white"
               >
                 Visit Our Page

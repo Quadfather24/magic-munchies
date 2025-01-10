@@ -2,7 +2,8 @@ import { useRef, useEffect, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { animated } from "@react-spring/web";
 import ParticleEffect from "../components/ParticleEffect";
-import PropTypes from "prop-types"; // Import the prop-types library
+import StickyButton from "../components/button";
+import PropTypes from "prop-types";
 
 import landingpage1 from "../assets/images/parralax/landingPage1.svg";
 import landingpage2 from "../assets/images/parralax/landingPage2.svg";
@@ -14,7 +15,7 @@ const ParallaxSection = ({ offset, speed, content, style, className = "" }) => (
     offset={offset}
     speed={speed}
     style={style}
-    className={`flex justify-center items-center ${className}`}
+    className={`justify-center items-center ${className}`}
   >
     {content}
   </ParallaxLayer>
@@ -53,7 +54,9 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="relative w-screen h-dvh overflow-hidden">
+    <div className="relative w-screen h-dvh">
+      <StickyButton />
+
       {/* Background Image */}
       <div className="absolute inset-0 z-30">
         <img
@@ -64,7 +67,7 @@ const LandingPage = () => {
         />
       </div>
 
-      <div className="absolute inset-0 z-50">
+      <div className="absolute inset-0 z-40 pointer-events-auto">
         <Parallax pages={3} ref={ref}>
           {/* Hero Section */}
           <ParallaxSection
@@ -79,7 +82,7 @@ const LandingPage = () => {
                     className="w-full h-full object-cover  2xl:object-contain max-h-dvh bg-yellow-300"
                   />
                 </div>
-                <div className="absolute top-1/2 right-0 md:right-[4rem] xl:right-[14rem] 2xl:right-[28rem] translate-y-[14rem] md:translate-y-[18rem] pr-1">
+                <div className="absolute top-1/2 right-0 md:right-[2rem] lg:right-[5rem] xl:right-[10rem] 2xl:right-[10rem] translate-y-[14rem] md:translate-y-[18rem] pr-1">
                   <animated.p className="text-[.75rem] md:text-xl lg:text-4xl text-black max-w-2xl text-center animate__animated animate__fadeInDown animate__infinite animate__slow">
                     Scroll to explore more
                   </animated.p>
@@ -89,7 +92,7 @@ const LandingPage = () => {
                 </div> */}
               </animated.div>
             }
-            className="relative overflow-hidden max-w-none"
+            className=""
           />
 
           {/* Middle Section */}
@@ -110,8 +113,8 @@ const LandingPage = () => {
             offset={2}
             speed={1.2}
             content={
-              <animated.div className="w-full h-full flex justify-center items-center relative">
-                <div className="relative w-full h-full mx-auto">
+              <div className="w-full h-full flex justify-center items-center relative z-auto">
+                <div className=" w-full h-full mx-auto">
                   <img
                     src={landingpage4}
                     alt="Menu background"
@@ -119,7 +122,11 @@ const LandingPage = () => {
                     loading="lazy"
                   />
                 </div>
-              </animated.div>
+                <div
+                  className="relative right-[5rem] top-[5rem]
+                translate-y-1 rotate-[-35deg] z-auto"
+                ></div>
+              </div>
             }
             className="bg-magicPurple"
           />
@@ -140,11 +147,10 @@ const LandingPage = () => {
           </ParallaxLayer>
         </Parallax>
       </div>
+
       {/* Particle Effect */}
-      <div className="absolute inset-0 z-20 pointer-events-none">
-        <div className="pointer-events-auto">
-          <ParticleEffect />
-        </div>
+      <div className="absolute inset-0 z-20">
+        <ParticleEffect />
       </div>
     </div>
   );
