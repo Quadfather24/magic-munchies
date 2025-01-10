@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "animate.css";
 
 function ContactPage() {
   useEffect(() => {
@@ -33,12 +34,14 @@ function ContactPage() {
     <div className="min-h-screen  w-full h-full mx-auto bg-contactImage1 bg-cover bg-center bg-no-repeat overflow-x-hidden">
       {/* Hero Section */}
       <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage bg-cover bg-center bg-no-repeat bg-magicTeal">
-        <div className="text-center animate-fade-in">
+        <div className="text-center mb-7">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text mb-4">
             Let's Connect
           </h1>
-          <p className="text-black text-xl">Scroll down</p>
-          <div className="mt-8 animate-bounce">
+          <p className="text-black text-xl animate__animated animate__fadeInDown ">
+            Scroll down
+          </p>
+          <div className="animate__animated animate__fadeOutDown animate__infinite animate__slow">
             <span className="text-black text-4xl">↓</span>
           </div>
         </div>
@@ -50,7 +53,7 @@ function ContactPage() {
           <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20  p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-white">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-blue-600 text-5xl">
-                <i className="fab fa-facebook animate-pulse"></i>
+                <i className="fab fa-facebook animate__animated animate__bounce animate__infinite"></i>
               </div>
               <h2 className="text-2xl font-bold text-white">
                 Connect on Facebook
@@ -73,7 +76,7 @@ function ContactPage() {
           <div className="bg-gradient-to-br from-magicTeal/20 to-slate-800/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-black">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-white text-5xl">
-                <i className="far fa-envelope animate-bounce"></i>
+                <i className="far fa-envelope animate__animated animate__bounce animate__infinite"></i>
               </div>
               <h2 className="text-2xl font-bold text-white">Email Us</h2>
               <p className="text-white text-lg max-w-md text-center">
@@ -94,7 +97,7 @@ function ContactPage() {
           <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-1 hover:ring-white">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-green-600 text-5xl">
-                <i className="fas fa-phone animate-wiggle"></i>
+                <i className="fas fa-phone animate__animated animate__bounce animate__infinite"></i>
               </div>
               <h2 className="text-2xl font-bold text-white">Call Us</h2>
               <p className="text-white text-lg max-w-md text-center">
@@ -102,7 +105,7 @@ function ContactPage() {
               </p>
               <a
                 href="tel:+13616522470"
-                className="mt-2 px-6 py-2 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300 hover:ring-2 hover:ring-white"
+                className="mt-2 px-6 py-2 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300 hover:ring-2 hover:ring-white animate-"
               >
                 +1 (361) 652-2470
               </a>
