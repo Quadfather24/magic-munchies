@@ -30,28 +30,32 @@ const TreatCarousel = ({ category, onSlideClick }) => {
         }}
         className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
       >
-        <img
-          src={slide.imageSrc}
-          alt={slide.title}
-          className="w-full h-auto md:h-96 object-cover rounded-lg shadow-md shadow-gray-900 "
-          loading="lazy"
-        />
+        <div className="relative w-full">
+          <div className="aspect-w-16 aspect-h-9 sm:aspect-w-3 sm:aspect-h-2 md:aspect-w-16 md:aspect-h-9">
+            <img
+              src={slide.imageSrc}
+              alt={slide.title}
+              className="w-full h-full object-contain rounded-lg shadow-md shadow-gray-900 transition-transform duration-300 transform hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     ),
   }));
 
   return (
-    <div className="relative flex flex-col flex-1 h-auto ">
-      <div>
-        <h2 className="text-3xl relative font-semibold mt-16 text-center">
+    <div className="relative flex flex-col w-full">
+      <div className="py-8 sm:py-12">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-center animate__animated animate__bounce animate__repeat-3">
           <span className="relative inline-block">
-            <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-magicPink via-magicPeach to-magicPink bg-[length:200%_100%] animate-bounceWithTranslate"></span>
-            <span className="relative p-6 rounded-full">{category.title}</span>
+            <span className="relative">{category.title}</span>
           </span>
         </h2>
       </div>
-      <div className="relative">
-        <div className="h-[44vh] sm:h-[155vh]">
+
+      <div className="relative w-full">
+        <div className="h-64 sm:h-96 md:h-112 lg:h-128 px-4 sm:px-8 md:px-16 lg:px-24">
           <Carousel
             slides={carouselSlides}
             goToSlide={currentIndex}
@@ -61,15 +65,15 @@ const TreatCarousel = ({ category, onSlideClick }) => {
           />
         </div>
 
-        {/* Navigation buttons */}
+        {/* Navigation buttons - Responsive positioning and sizing */}
         <button
           onClick={handlePrevSlide}
-          className="absolute left-8 lg:left-16 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+          className="absolute left-2 sm:left-4 md:left-8 lg:left-12 top-1/2 transform -translate-y-1/2 bg-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
           aria-label={`Previous ${category.title} slide`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-4 w-4 sm:h-6 sm:w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -84,12 +88,12 @@ const TreatCarousel = ({ category, onSlideClick }) => {
         </button>
         <button
           onClick={handleNextSlide}
-          className="absolute right-8 lg:right-16 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+          className="absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 transform -translate-y-1/2 bg-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
           aria-label={`Next ${category.title} slide`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-4 w-4 sm:h-6 sm:w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -107,7 +111,6 @@ const TreatCarousel = ({ category, onSlideClick }) => {
   );
 };
 
-// Define prop types
 TreatCarousel.propTypes = {
   category: PropTypes.shape({
     id: PropTypes.string.isRequired,
