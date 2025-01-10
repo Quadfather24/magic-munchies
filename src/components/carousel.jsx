@@ -42,12 +42,17 @@ const TreatCarousel = ({ category, onSlideClick }) => {
   }));
 
   return (
-    <div className="mb-16 pt-12">
-      <h2 className="text-2xl font-semibold text-center mb-8">
-        {category.title}
-      </h2>
+    <div className="relative flex flex-col flex-1 h-auto ">
+      <div>
+        <h2 className="text-3xl relative font-semibold mt-16 text-center">
+          <span className="relative inline-block">
+            <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-magicPink via-magicPeach to-magicPink bg-[length:200%_100%] animate-gradient"></span>
+            <span className="relative p-6 rounded-full">{category.title}</span>
+          </span>
+        </h2>
+      </div>
       <div className="relative">
-        <div className="h-[500px]">
+        <div className="h-[52vh]">
           <Carousel
             slides={carouselSlides}
             goToSlide={currentIndex}
