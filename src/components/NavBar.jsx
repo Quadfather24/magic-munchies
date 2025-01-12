@@ -24,7 +24,7 @@ export default function NavBar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-magicPink w-full rounded-sm shadow-sm shadow-gray-500"
+      className="bg-magicTeal w-full rounded-sm shadow-sm shadow-gray-500"
     >
       {({ open }) => (
         <>
@@ -68,8 +68,8 @@ export default function NavBar() {
                       aria-current={isActive ? "page" : undefined}
                       className={classNames(
                         isActive
-                          ? "bg-magicPeach text-black border border-someColor"
-                          : "text-black hover:bg-magicPeach hover:text-white",
+                          ? "bg-magicPeach text-black border border-magicTeal hover:border-black"
+                          : "text-black hover:bg-magicPeach hover:text-white hover:border hover:border-black",
                         "rounded-md px-3 py-2 text-sm font-medium"
                       )}
                     >

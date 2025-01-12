@@ -4,18 +4,98 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  html,
-  body {
-    @apply bg-magic-gradient min-h-screen;
-    @apply font-sourGummy;
+/* Base styles with CSS variable */
+@layer base {
+  html {
     scroll-behavior: smooth;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+  }
+  body {
+    @apply bg-magic-gradient min-h-screen font-sourGummy;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+      env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  /* Improved touch targets for mobile */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    @apply min-h-[44px] min-w-[44px]; /* Minimum touch target size */
+  }
+  @media (pointer: fine) {
+    min-height: unset;
+    min-width: unset;
   }
 
+  /* Responsive container padding */
+  .container {
+    @apply px-4 md:px-6 lg:px-8;
+    margin: 0 auto;
+    max-width: min(100% - 2rem, 1280px);
+  }
+
+  /* Fluid typography using clamp */
+  h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+  h3 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  /* Responsive grid system */
+  .responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+
+  /* Better media query breakpoints */
+  @media screen and (max-width: 640px) {
+    .modal-content {
+      @apply mx-2 p-4;
+      max-height: 85vh;
+    }
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Prevent pull-to-refresh on mobile */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      overscroll-behavior-y: none;
+    }
+  }
+
+  /* Responsive images */
+  img {
+    @apply max-w-full h-auto;
+    content-visibility: auto;
+  }
+
+  /* Better form elements on mobile */
+  @media (max-width: 640px) {
+    input,
+    select,
+    textarea {
+      @apply text-base; /* Prevents zoom on focus in iOS */
+      appearance: none;
+    }
+  }
   /* Base styles for sliding elements */
   .slide-element {
     opacity: 0;
@@ -23,6 +103,20 @@
     will-change: transform, opacity;
   }
 
+  :root {
+    --swipe-offset: 0px;
+  }
+
+  @layer components {
+    .modal-content {
+      @apply relative bg-magicPeach rounded-lg p-6 max-w-7xl w-full mx-4 overflow-hidden max-h-[90vh];
+      @apply transition-swipe duration-300 ease-in-out;
+    }
+
+    .swipe-animation {
+      @apply transform transition-transform duration-300 ease-in-out;
+    }
+  }
   /* Offscreen to the left */
   .slide-left {
     transform: translateX(-100%);
