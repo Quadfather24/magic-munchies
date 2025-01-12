@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { animated } from "@react-spring/web";
-import { Link } from "react-router-dom";
 import ParticleEffect from "../components/ParticleEffect";
 import PropTypes from "prop-types";
 import "animate.css";
@@ -10,7 +9,6 @@ import landingpage2 from "../assets/images/parralax/landingPage2.svg";
 import landingpage3 from "../assets/images/parralax/landingPage3.svg";
 import landingpage4 from "../assets/images/parralax/landingPage4.svg";
 
-// ParallaxSection component definition remains the same
 const ParallaxSection = ({ offset, speed, content, style, className = "" }) => (
   <ParallaxLayer
     offset={offset}
@@ -36,34 +34,11 @@ ParallaxSection.defaultProps = {
   className: "",
 };
 
-// Main LandingPage component
 const LandingPage = () => {
-  // State management
   const [currentPage, setCurrentPage] = useState(0);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const [showButton, setShowButton] = useState(false);
+  const [showDelayedButton, setShowDelayedButton] = useState(false);
   const ref = useRef();
-  const [isStuck, setIsStuck] = useState(false);
-
-  // Setup scroll listener using the Parallax ref
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const container = ref.current.container.current;
-    const handleScroll = () => {
-      const scrollTop = container.scrollTop;
-      const pageHeight = container.clientHeight;
-      const scrollProgress = scrollTop / pageHeight;
-      console.log("Scroll progress:", scrollProgress);
-
-      // Show button when we're a bit further into page 2 (2.15 instead of 2.0)
-      setShowButton(scrollProgress >= 2);
-      setCurrentPage(Math.round(scrollProgress));
-    };
-
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Set up interaction detection
   useEffect(() => {
@@ -82,6 +57,14 @@ const LandingPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowDelayedButton(true);
+    }, 6000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Handle URL parameters
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -94,62 +77,7 @@ const LandingPage = () => {
     }
   }, []);
 
-<<<<<<< HEAD
-  const handleScroll = (page) => {
-    ref.current?.scrollTo(page);
-    setCurrentPage(page);
-  };
-
-  // (Optional) Keep if you still need to store "section=gallery" in the URL
-  const navigateToGallery = (e) => {
-    const currentURL = new URL(window.location.href);
-    currentURL.searchParams.set("section", "gallery");
-    window.history.replaceState({}, "", currentURL);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!ref.current) return;
-      const container = ref.current.container.current;
-      if (!container) return;
-
-      // 1) Figure out current page
-      const scrollPercentage =
-        container.scrollTop / (container.scrollHeight - container.clientHeight);
-      // NEW: threshold-based approach
-      let page;
-      // Because we have 3 pages total: offsets (0, 1, 2),
-      // we effectively have 2 "segments" of scrolling in [0..1].
-      const pagesCount = 2; // i.e., (3 pages - 1)
-      const step = 1 / pagesCount; // 0.5 if pagesCount=2
-
-      if (scrollPercentage < step / 2) {
-        // from 0.00 up to ~0.25
-        page = 0;
-      } else if (scrollPercentage < step + step / 2) {
-        // from ~0.25 up to ~0.75
-        page = 1;
-      } else {
-        // from ~0.75 up to 1.0
-        page = 2;
-      }
-
-      if (page !== currentPage) {
-        setCurrentPage(page);
-      }
-
-      // 2) Are we fully scrolled to bottom?
-      const scrolled = container.scrollTop + container.clientHeight;
-      const fullHeight = container.scrollHeight - 1;
-      setIsFullyOnSecondPage(scrolled >= fullHeight);
-    };
-  }, [currentPage]);
-
-  return (
-    <div className="relative w-screen h-screen pointer-events-none">
-      {/* Background Image */}
-=======
-  // Navigation helper
+  // Navigation helper with smooth scrolling
   const handleScroll = (page) => {
     ref.current?.scrollTo(page);
     setCurrentPage(page);
@@ -158,7 +86,6 @@ const LandingPage = () => {
   return (
     <div className="relative w-screen h-screen pointer-events-none">
       {/* Background image */}
->>>>>>> bc9c07a (fixed landing page scroll bug.)
       <div className="absolute w-full h-dvh">
         <img
           src={landingpage2}
@@ -168,19 +95,10 @@ const LandingPage = () => {
         />
       </div>
 
-      {/* Parallax container */}
+      {/* Parallax container with smooth scrolling */}
       <div className="absolute inset-0 z-30 pointer-events-auto">
-<<<<<<< HEAD
-        <Parallax
-          pages={3}
-          ref={ref}
-          onChange={({ offset }) => handleParallaxChange(offset)}
-        >
-          {/* Top Section */}
-=======
         <Parallax pages={3} ref={ref}>
           {/* First section */}
->>>>>>> bc9c07a (fixed landing page scroll bug.)
           <ParallaxSection
             offset={0}
             speed={0.8}
@@ -265,27 +183,33 @@ const LandingPage = () => {
         <ParticleEffect />
       </div>
 
-      {/* Gallery button - Smooth transition */}
+      {/* Arrow pointing up */}
       <div
         className={`
-          pointer-events-auto fixed left-1/2 bottom-32 -translate-x-1/2 z-[999] bg-magicTeal
-          transition-all duration-500 ease-in-out
+          fixed top-12 left-[27.99rem] -translate-x-1/2 z-[999] pointer-events-auto
+          transition-all duration-1000 ease-in-out
+          animate__animated animate__slideInUp animate__infinite animate__slow
           ${
-            showButton
+            showDelayedButton
               ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8 pointer-events-none"
+              : "opacity-0 translate-y-8"
           }
         `}
       >
-        <Link
-          to="/gallery"
-          className="px-8 py-4 text-white rounded-lg
-                   hover:bg-opacity-90 transition-all duration-300
-                   shadow-lg hover:shadow-xl text-lg font-medium
-                   inline-block whitespace-nowrap"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-black"
         >
-          Visit Gallery
-        </Link>
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
       </div>
     </div>
   );
