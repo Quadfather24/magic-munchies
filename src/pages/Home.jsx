@@ -73,19 +73,16 @@ const LandingPage = () => {
     }
   }, []);
 
+  const handleScroll = (page) => {
+    ref.current?.scrollTo(page);
+    setCurrentPage(page);
+  };
+
   // (Optional) Keep if you still need to store "section=gallery" in the URL
   const navigateToGallery = (e) => {
     const currentURL = new URL(window.location.href);
     currentURL.searchParams.set("section", "gallery");
     window.history.replaceState({}, "", currentURL);
-  };
-
-  // (Optional) Keep if you need page offset detection
-  const handleParallaxScroll = (offset) => {
-    const page = Math.round(offset);
-    if (page !== currentPage) {
-      setCurrentPage(page);
-    }
   };
 
   useEffect(() => {
@@ -97,7 +94,24 @@ const LandingPage = () => {
       // 1) Figure out current page
       const scrollPercentage =
         container.scrollTop / (container.scrollHeight - container.clientHeight);
-      const page = Math.round(scrollPercentage * 2);
+      // NEW: threshold-based approach
+      let page;
+      // Because we have 3 pages total: offsets (0, 1, 2),
+      // we effectively have 2 "segments" of scrolling in [0..1].
+      const pagesCount = 2; // i.e., (3 pages - 1)
+      const step = 1 / pagesCount; // 0.5 if pagesCount=2
+
+      if (scrollPercentage < step / 2) {
+        // from 0.00 up to ~0.25
+        page = 0;
+      } else if (scrollPercentage < step + step / 2) {
+        // from ~0.25 up to ~0.75
+        page = 1;
+      } else {
+        // from ~0.75 up to 1.0
+        page = 2;
+      }
+
       if (page !== currentPage) {
         setCurrentPage(page);
       }
@@ -107,18 +121,12 @@ const LandingPage = () => {
       const fullHeight = container.scrollHeight - 1;
       setIsFullyOnSecondPage(scrolled >= fullHeight);
     };
-
-    const container = ref.current?.container.current;
-    if (container) {
-      container.addEventListener("scroll", handleScroll);
-      return () => container.removeEventListener("scroll", handleScroll);
-    }
   }, [currentPage]);
 
   return (
     <div className="relative w-screen h-screen pointer-events-none">
       {/* Background Image */}
-      <div className="absolute w-full">
+      <div className="absolute w-full h-dvh">
         <img
           src={landingpage2}
           className="w-full h-full object-cover opacity-45"
@@ -132,14 +140,12 @@ const LandingPage = () => {
         <Parallax
           pages={3}
           ref={ref}
-          onScroll={handleParallaxScroll}
-          className="relative"
-          config={{ tension: 50, friction: 20 }} // Adds for smoother scrolling
+          onChange={({ offset }) => handleParallaxChange(offset)}
         >
           {/* Top Section */}
           <ParallaxSection
             offset={0}
-            speed={0.5}
+            speed={0.8}
             content={
               <animated.div className="w-full h-full flex justify-center items-center relative">
                 <div className="relative w-full h-full mx-auto">
@@ -169,7 +175,7 @@ const LandingPage = () => {
           {/* Middle Section */}
           <ParallaxSection
             offset={1}
-            speed={0.8}
+            speed={0.5}
             style={{
               backgroundImage: `url(${landingpage3})`,
               backgroundSize: "contain",
@@ -182,7 +188,7 @@ const LandingPage = () => {
           {/* Bottom section*/}
           <ParallaxSection
             offset={2}
-            speed={0.1}
+            speed={1}
             content={
               <div className="relative w-full h-full flex flex-col items-center justify-center pointer-events-auto">
                 <img
@@ -201,7 +207,7 @@ const LandingPage = () => {
             sticky={{ start: 0, end: 2 }}
             className="z-50 pointer-events-auto"
           >
-            <div className="absolute -right-2 top-7 rotate-90">
+            <div className="absolute -right-2 top-7 rotate-90 pointer-events-auto">
               {[0, 1, 2].map((page) => (
                 <button
                   key={page}
@@ -239,11 +245,6 @@ const LandingPage = () => {
         >
           Visit Gallery
         </Link>
-      </div>
-
-      {/* Debug overlay to help us see what's happening */}
-      <div className="fixed top-4 left-4 z-[1000] bg-black bg-opacity-50 text-white p-2 rounded">
-        Page: {currentPage}
       </div>
     </div>
   );

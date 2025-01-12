@@ -20,16 +20,12 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
   /* Improved touch targets for mobile */
-  button,
+
   a,
   input,
   select,
   textarea {
     @apply min-h-[44px] min-w-[44px]; /* Minimum touch target size */
-  }
-  @media (pointer: fine) {
-    min-height: unset;
-    min-width: unset;
   }
 
   /* Responsive container padding */
