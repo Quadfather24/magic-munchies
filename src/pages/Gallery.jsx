@@ -18,7 +18,7 @@ export default function Menu() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-magic-gradient ">
       {treatCategories.map((category) => (
         <TreatCarousel
           key={category.id}

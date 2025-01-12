@@ -10,7 +10,7 @@ import landingpage2 from "../assets/images/parralax/landingPage2.svg";
 import landingpage3 from "../assets/images/parralax/landingPage3.svg";
 import landingpage4 from "../assets/images/parralax/landingPage4.svg";
 
-// ParallaxSection component definition
+// ParallaxSection component definition remains the same
 const ParallaxSection = ({ offset, speed, content, style, className = "" }) => (
   <ParallaxLayer
     offset={offset}
@@ -38,12 +38,34 @@ ParallaxSection.defaultProps = {
 
 // Main LandingPage component
 const LandingPage = () => {
-  // State and refs
+  // State management
   const [currentPage, setCurrentPage] = useState(0);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const [isFullyOnSecondPage, setIsFullyOnSecondPage] = useState(false);
+  const [showButton, setShowButton] = useState(false);
   const ref = useRef();
+  const [isStuck, setIsStuck] = useState(false);
 
+  // Setup scroll listener using the Parallax ref
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const container = ref.current.container.current;
+    const handleScroll = () => {
+      const scrollTop = container.scrollTop;
+      const pageHeight = container.clientHeight;
+      const scrollProgress = scrollTop / pageHeight;
+      console.log("Scroll progress:", scrollProgress);
+
+      // Show button when we're a bit further into page 2 (2.15 instead of 2.0)
+      setShowButton(scrollProgress >= 2);
+      setCurrentPage(Math.round(scrollProgress));
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Set up interaction detection
   useEffect(() => {
     document.body.style.overflow = "hidden";
     const handleInteraction = () => setHasInteracted(true);
@@ -60,19 +82,19 @@ const LandingPage = () => {
     };
   }, []);
 
-  // Check URL parameters on mount
+  // Handle URL parameters
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const section = urlParams.get("section");
 
     if (section === "gallery") {
-      // Scroll to the last page right away
       ref.current?.scrollTo(2);
       setCurrentPage(2);
       setHasInteracted(true);
     }
   }, []);
 
+<<<<<<< HEAD
   const handleScroll = (page) => {
     ref.current?.scrollTo(page);
     setCurrentPage(page);
@@ -126,6 +148,17 @@ const LandingPage = () => {
   return (
     <div className="relative w-screen h-screen pointer-events-none">
       {/* Background Image */}
+=======
+  // Navigation helper
+  const handleScroll = (page) => {
+    ref.current?.scrollTo(page);
+    setCurrentPage(page);
+  };
+
+  return (
+    <div className="relative w-screen h-screen pointer-events-none">
+      {/* Background image */}
+>>>>>>> bc9c07a (fixed landing page scroll bug.)
       <div className="absolute w-full h-dvh">
         <img
           src={landingpage2}
@@ -135,14 +168,19 @@ const LandingPage = () => {
         />
       </div>
 
-      {/* Parallax Container */}
+      {/* Parallax container */}
       <div className="absolute inset-0 z-30 pointer-events-auto">
+<<<<<<< HEAD
         <Parallax
           pages={3}
           ref={ref}
           onChange={({ offset }) => handleParallaxChange(offset)}
         >
           {/* Top Section */}
+=======
+        <Parallax pages={3} ref={ref}>
+          {/* First section */}
+>>>>>>> bc9c07a (fixed landing page scroll bug.)
           <ParallaxSection
             offset={0}
             speed={0.8}
@@ -172,7 +210,7 @@ const LandingPage = () => {
             }
           />
 
-          {/* Middle Section */}
+          {/* Middle section */}
           <ParallaxSection
             offset={1}
             speed={0.5}
@@ -185,7 +223,7 @@ const LandingPage = () => {
             className="bg-magicHot"
           />
 
-          {/* Bottom section*/}
+          {/* Bottom section */}
           <ParallaxSection
             offset={2}
             speed={1}
@@ -222,26 +260,29 @@ const LandingPage = () => {
         </Parallax>
       </div>
 
-      {/* Particle effect stays above background but below content */}
+      {/* Particle effect */}
       <div className="absolute inset-0 z-20">
         <ParticleEffect />
       </div>
 
-      {/* Standalone button container */}
+      {/* Gallery button - Smooth transition */}
       <div
-        className="pointer-events-auto fixed left-1/2 bottom-32 -translate-x-1/2 z-[999]"
-        style={{
-          opacity: isFullyOnSecondPage ? 1 : 0,
-          pointerEvents: isFullyOnSecondPage ? "auto" : "none",
-          transition: "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
-        }}
+        className={`
+          pointer-events-auto fixed left-1/2 bottom-32 -translate-x-1/2 z-[999] bg-magicTeal
+          transition-all duration-500 ease-in-out
+          ${
+            showButton
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8 pointer-events-none"
+          }
+        `}
       >
         <Link
           to="/gallery"
-          onClick={navigateToGallery}
-          className="absolute px-8 py-4 bg-magicTeal text-white rounded-lg
-               hover:bg-opacity-90 transition-all duration-300
-               shadow-lg hover:shadow-xl text-lg font-medium"
+          className="px-8 py-4 text-white rounded-lg
+                   hover:bg-opacity-90 transition-all duration-300
+                   shadow-lg hover:shadow-xl text-lg font-medium
+                   inline-block whitespace-nowrap"
         >
           Visit Gallery
         </Link>

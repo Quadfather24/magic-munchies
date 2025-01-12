@@ -15,7 +15,7 @@
     font-size: 16px;
   }
   body {
-    @apply bg-magic-gradient min-h-screen font-sourGummy;
+    @apply min-h-screen font-sourGummy;
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
