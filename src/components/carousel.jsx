@@ -84,7 +84,7 @@ const CarouselImage = memo(
             onClick(slide);
           }
         }}
-        className="cursor-pointer focus:outline-none w-full h-full"
+        className="cursor-pointer focus:outline-none w-full h-full "
       >
         <div
           className={`relative w-full h-full max-w-screen-2xl mx-auto mt-2 ${
@@ -93,8 +93,8 @@ const CarouselImage = memo(
               : ""
           }`}
         >
-          <div className="flex flex-col items-center h-full">
-            <div className="justify-center  text-center w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2">
+          <div className="flex flex-col items-center w-full h-full">
+            <div className="justify-center text-center  sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2">
               <h3 className="text-base text-nowrap sm:text-lg md:text-xl lg:text-2xl font-medium">
                 {slide.title}
               </h3>
@@ -113,7 +113,7 @@ const CarouselImage = memo(
                 ref={imgRef}
                 src={slide.imageSrc}
                 alt={slide.title}
-                className={`w-full h-full object-contain rounded-md shadow-sm shadow-zinc-00
+                className={`object-contain rounded-md shadow-sm shadow-zinc-800
                          transition-all duration-300 ease-out
                          ${sourceLoaded ? "opacity-100" : "opacity-0"}`}
                 loading={isActive ? "eager" : "lazy"}
@@ -151,23 +151,21 @@ const TreatCarousel = ({
   showArrows = defaultCarouselProps.showArrows,
   className = defaultCarouselProps.className,
 }) => {
-  // State management
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [isAnimating, setIsAnimating] = useState(false);
-  // This state controls the initial bounce animation for all slides
   const [removeBounceAnimation, setRemoveBounceAnimation] = useState(false);
   const autoPlayTimeoutRef = useRef(null);
+  const swipeStartRef = useRef(null);
 
-  // Spring animation configuration
+  // Enhanced spring animation configuration for smoother transitions
   const smoothConfig = {
     mass: 1,
-    tension: 115,
-    friction: 16,
-    clamp: false,
+    tension: 210, // Increased for snappier response
+    friction: 20, // Adjusted for smoother movement
+    clamp: true, // Prevents overshooting
     precision: 0.01,
     velocity: 0,
   };
-
   // Performance and image loading hooks
   usePerformanceTracking("TreatCarousel");
   useImagePreload(currentIndex, category.slides);
@@ -176,7 +174,7 @@ const TreatCarousel = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setRemoveBounceAnimation(true);
-    }, 3000); // Adjust this timing based on your animation duration
+    }, 3500); // Adjust this timing based on your animation duration
 
     return () => clearTimeout(timer);
   }, []);
@@ -203,7 +201,7 @@ const TreatCarousel = ({
     }
   }, [autoPlay, isAnimating, autoPlayInterval, handleAutoPlay]);
 
-  const ANIMATION_DURATION = 400;
+  const ANIMATION_DURATION = 300;
 
   // Navigation handlers
   const handleNextSlide = useCallback(() => {
@@ -233,7 +231,7 @@ const TreatCarousel = ({
     preventDefaultTouchmoveEvent: true,
     trackMouse: false,
     delta: 50,
-    swipeDuration: 500,
+    swipeDuration: 300,
     touchEventOptions: { passive: true },
   });
 
@@ -253,7 +251,7 @@ const TreatCarousel = ({
   return (
     <div className="w-full">
       <div
-        className={`flex flex-col w-full text-nowrap items-center justify-center min-h-[32.5rem] md:min-h-[46.5rem] max-w-screen-2xl mx-auto ${className}`}
+        className={`flex flex-col w-full pb-[8rem] text-balance items-center justify-center min-h-[32.5rem] md:min-h-[46.5rem] max-w-screen-2xl mx-auto${className}`}
       >
         <div className="mb-[5.96rem] md:mb-[9.25rem] lg:mb-[6.96rem] animate__animated animate__jackInTheBox animate__slow">
           <h2 className="text-[2.4rem] sm:text-5xl md:text-7xl font-semibold text-center text-black flex items-center justify-center">

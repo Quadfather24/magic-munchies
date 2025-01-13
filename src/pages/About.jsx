@@ -1,119 +1,109 @@
-function About() {
+import { Heart, Star, Coffee, Cake } from "lucide-react";
+
+const About = () => {
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img
-          className="object-cover w-full rounded-t-lg h-96 md:h-52 md:w-48 md:rounded-none md:rounded-s-lg"
-          src="/api/placeholder/400/320"
-          alt="Logo of East"
-        />
-        <div className="flex flex-col justify-between p-4 leading-normal">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
-          </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
+    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+      {/* Hero Section with Profile Image */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="relative">
+          {/* Main Profile Image */}
+          <div className="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-pink-200 shadow-xl">
+            <img
+              src="/api/placeholder/400/400"
+              alt="Business Owner"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute -top-4 -right-4">
+            <Heart className="text-pink-400 w-12 h-12" />
+          </div>
+          <div className="absolute -bottom-4 -left-4">
+            <Star className="text-yellow-400 w-12 h-12" />
+          </div>
+        </div>
+
+        {/* Owner Name and Title */}
+        <div className="text-center mt-8">
+          <h1 className="text-4xl font-bold text-gray-800 mb-2">
+            Sarah's Sweet Creations
+          </h1>
+          <p className="text-xl text-pink-600">
+            Crafting Joy, One Dessert at a Time
           </p>
         </div>
-      </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="grid gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 1"
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 2"
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 3"
-            />
+        {/* About Me Content */}
+        <div className="mt-16 max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-lg">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            Our Sweet Story
+          </h2>
+          <div className="space-y-4 text-gray-600">
+            <p>
+              Welcome to my world of sweetness! I'm Sarah, a passionate pastry
+              chef with over a decade of experience in creating memorable
+              dessert experiences. My journey began in my grandmother's kitchen,
+              where I first discovered the magic of turning simple ingredients
+              into extraordinary treats.
+            </p>
+            <p>
+              What sets us apart is our commitment to using only the finest
+              ingredients while incorporating innovative techniques to create
+              desserts that are both visually stunning and incredibly delicious.
+              Every creation that leaves our kitchen is crafted with love,
+              attention to detail, and a touch of magic.
+            </p>
           </div>
         </div>
-        <div className="grid gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 4"
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 5"
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 6"
-            />
+
+        {/* Served Companies Grid */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
+            Proud to Serve
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[1, 2, 3, 4].map((index) => (
+              <div key={index} className="aspect-square relative group">
+                <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 transform group-hover:scale-105">
+                  <img
+                    src={`/api/placeholder/200/200`}
+                    alt={`Company ${index}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="grid gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 7"
-            />
+
+        {/* Highlights Section */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white p-6 rounded-xl shadow-md text-center">
+            <Coffee className="mx-auto text-pink-500 w-12 h-12 mb-4" />
+            <h3 className="font-bold text-gray-800 mb-2">Custom Orders</h3>
+            <p className="text-gray-600">
+              Personalized desserts crafted to your exact specifications
+            </p>
           </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 8"
-            />
+          <div className="bg-white p-6 rounded-xl shadow-md text-center">
+            <Cake className="mx-auto text-pink-500 w-12 h-12 mb-4" />
+            <h3 className="font-bold text-gray-800 mb-2">Fresh Daily</h3>
+            <p className="text-gray-600">
+              Made fresh every morning with premium ingredients
+            </p>
           </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 9"
-            />
-          </div>
-        </div>
-        <div className="grid gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 10"
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 11"
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/api/placeholder/400/320"
-              alt="Gallery image 12"
-            />
+          <div className="bg-white p-6 rounded-xl shadow-md text-center">
+            <Heart className="mx-auto text-pink-500 w-12 h-12 mb-4" />
+            <h3 className="font-bold text-gray-800 mb-2">Made with Love</h3>
+            <p className="text-gray-600">
+              Every dessert is crafted with passion and care
+            </p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default About;
