@@ -207,6 +207,78 @@ export const treatCategories = [
     ],
   },
   {
+    id: "candy-apple",
+    title: "🍎 Apples 🍎",
+    slides: [
+      {
+        key: 1,
+        imageSrc: "/src/assets/images/candy-apples/spiderman-apple.jpg",
+        title: "Spider-Man",
+        description: "",
+      },
+      {
+        key: 2,
+        imageSrc: "/src/assets/images/candy-apples/goldApple.jpg",
+        title: "gold butterfly",
+        description: "",
+      },
+      {
+        key: 3,
+        imageSrc: "/src/assets/images/candy-apples/butterfly-apples.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 4,
+        imageSrc: "/src/assets/images/candy-apples/Encanto.jpg",
+        title: "",
+        description: "",
+      },
+      {
+        key: 5,
+        imageSrc: "/src/assets/images/candy-apples",
+        title: "",
+        description: "",
+      },
+      {
+        key: 6,
+        imageSrc: "/src/assets/images/candy-apples",
+        title: "",
+        description: "",
+      },
+      {
+        key: 7,
+        imageSrc: "/src/assets/images/candy-apples",
+        title: "",
+        description: "",
+      },
+      {
+        key: 8,
+        imageSrc: "/src/assets/images/candy-apples",
+        title: "",
+        description: "",
+      },
+      {
+        key: 9,
+        imageSrc: "/src/assets/images/candy-apples",
+        title: "",
+        description: "",
+      },
+      {
+        key: 10,
+        imageSrc: "/src/assets/images/candy-apples",
+        title: "",
+        description: "",
+      },
+      {
+        key: 1,
+        imageSrc: "/src/assets/images/candy-apples",
+        title: "",
+        description: "",
+      },
+    ],
+  },
+  {
     id: "pretzel",
     title: "🥨 Pretzels 🥨",
     slides: [
@@ -462,16 +534,17 @@ export const treatCategories = [
     slides: [
       {
         key: 1,
-        imageSrc: "/src/assets/images/assortments/specialty.jpg",
+        imageSrc: "/src/assets/images/assortments/assortment5.jpg",
         title: "Specialty Spread 🍭",
         description:
           "A colorful spread featuring a variety of specialty sweets.",
       },
       {
         key: 2,
-        imageSrc: "/src/assets/images/assortments/assorted.jpg",
+        imageSrc: "/src/assets/images/assortments/assorted3.jpg",
         title: "Assorted Delights 🍬",
-        description: "An assortment of goodies for every craving.",
+        description:
+          "An assortment of pretzel & rice crispy watermelon goodies for every craving.",
       },
       {
         key: 3,
