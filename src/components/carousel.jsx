@@ -207,13 +207,8 @@ const TreatCarousel = ({
 
   // Navigation handlers
   const handleNextSlide = useCallback(() => {
-    // Don't start new animation if one is in progress
     if (isAnimating) return;
-
-    // Start animation phase
     setIsAnimating(true);
-
-    // Update the current index, wrapping around to start if at end
     setCurrentIndex((prevIndex) => (prevIndex + 1) % category.slides.length);
     setTimeout(() => {
       setIsAnimating(false);
@@ -221,13 +216,8 @@ const TreatCarousel = ({
   }, [category.slides.length, isAnimating]);
 
   const handlePrevSlide = useCallback(() => {
-    // Don't start new animation if one is in progress
     if (isAnimating) return;
-
-    // Start animation phase
     setIsAnimating(true);
-
-    // Update current index, wrapping to end if at start
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? category.slides.length - 1 : prevIndex - 1
     );
@@ -236,12 +226,6 @@ const TreatCarousel = ({
     }, ANIMATION_DURATION + 50);
   }, [category.slides.length, isAnimating]);
 
-    // Allow animation to complete before enabling next transition
-    setTimeout(() => {
-      setIsAnimating(false);
-      // Small buffer added after animation completes for smoother feel
-    }, ANIMATION_DURATION + 50);
-  }, [category.slides.length, isAnimating]);
   // Swipe handlers
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleNextSlide,
