@@ -1,55 +1,81 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const TreatModal = ({ isOpen, onClose, slide }) => {
-  // Add useEffect to manage body scrolling
+const TreatModal = ({ isOpen, onClose, slide, onNext, onPrevious }) => {
   useEffect(() => {
     if (isOpen) {
-      // When the modal opens, prevent scrolling on the body
       document.body.style.overflow = "hidden";
-      // Also prevent touch scrolling for mobile devices
       document.body.style.position = "fixed";
       document.body.style.width = "100%";
+
+      // Add keyboard navigation
+      const handleKeyPress = (e) => {
+        if (e.key === "ArrowRight") onNext();
+        if (e.key === "ArrowLeft") onPrevious();
+        if (e.key === "Escape") onClose();
+      };
+
+      window.addEventListener("keydown", handleKeyPress);
+      return () => {
+        window.removeEventListener("keydown", handleKeyPress);
+      };
     } else {
-      // When modal closes, restore normal scrolling behavior
       document.body.style.overflow = "unset";
       document.body.style.position = "static";
       document.body.style.width = "auto";
     }
 
-    // Cleanup function that runs when component unmounts
-    // This ensures we don't leave the body in a non-scrollable state
     return () => {
       document.body.style.overflow = "unset";
       document.body.style.position = "static";
       document.body.style.width = "auto";
     };
-  }, [isOpen]); // Only re-run effect when isOpen changes
+  }, [isOpen, onNext, onPrevious, onClose]);
 
-  // We keep a simple features array for the modal content
-  const features = [{ name: "Description", description: slide.description }];
+  const features = [{ name: "Description", description: slide?.description }];
 
-  // Early return if the modal shouldn't be shown
   if (!isOpen || !slide) return null;
 
   return (
     <div
-      // The outer div serves as our modal backdrop and container
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
       onClick={onClose}
     >
       <div
-        // The inner div contains our actual modal content
         className="relative bg-magicPeach rounded-lg p-6 max-w-7xl w-full mx-4 overflow-auto max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button - positioned in the top-right corner */}
+        {/* Close Button */}
         <button
           className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 text-2xl"
           onClick={onClose}
         >
           &times;
+        </button>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrevious();
+          }}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6 text-gray-700" strokeWidth={2} />
+        </button>
+
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6 text-gray-700" strokeWidth={2} />
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -106,6 +132,8 @@ const TreatModal = ({ isOpen, onClose, slide }) => {
 TreatModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
+  onPrevious: PropTypes.func.isRequired,
   slide: PropTypes.shape({
     imageSrc: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

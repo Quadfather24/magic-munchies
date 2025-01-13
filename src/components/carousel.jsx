@@ -8,6 +8,9 @@ import { useSwipeable } from "react-swipeable";
 const TreatCarousel = ({ category, onSlideClick }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const handleSlideClick = (slide) => {
+    onSlideClick(slide);
+  };
 
   const handleNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % category.slides.length);
@@ -60,12 +63,12 @@ const TreatCarousel = ({ category, onSlideClick }) => {
     key: slide.key,
     content: (
       <div
-        onClick={() => onSlideClick(slide)}
+        onClick={() => handleSlideClick(slide)}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
-            onSlideClick(slide);
+            handleSlideClick(slide);
           }
         }}
         className={`cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 

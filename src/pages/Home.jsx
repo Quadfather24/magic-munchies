@@ -37,7 +37,7 @@ ParallaxSection.defaultProps = {
 const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const [showDelayedButton, setShowDelayedButton] = useState(false);
+
   const ref = useRef();
 
   // Set up interaction detection
