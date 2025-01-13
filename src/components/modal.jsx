@@ -14,7 +14,7 @@ const ModalImage = memo(({ src, alt }) => {
   }, [src]);
 
   return (
-    <div className="relative flex justify-center items-center w-full -full">
+    <div className="relative flex justify-center items-center w-full -full ">
       {/* Progressive loading with blur-up technique */}
       <div
         className={`absolute inset-0 bg-gray-200 rounded-lg
@@ -23,7 +23,7 @@ const ModalImage = memo(({ src, alt }) => {
       <img
         src={src}
         alt={alt}
-        className={`rounded-lg bg-gray-100 w-full h-full object-cover object-center
+        className={`rounded-lg w-full h-full object-cover object-center
                    transition-all duration-300 
                    ${
                      isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
@@ -175,9 +175,9 @@ const TreatModal = memo(({ isOpen, onClose, slide, onNext, onPrevious }) => {
       >
         {/* Close button */}
         <button
-          className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 
+          className="absolute top-0 left-0 text-black hover:text-magicTeal 
                      w-8 h-8 flex items-center justify-center rounded-full 
-                     hover:bg-gray-200 transition-colors
+                     hover:bg-magicPink transition-colors
                      focus:outline-none focus:ring-2 focus:ring-offset-2 
                      focus:ring-magicTeal"
           onClick={onClose}
