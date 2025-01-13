@@ -1,35 +1,61 @@
-import { Heart, Star, Coffee, Cake } from "lucide-react";
+import { Coffee, Cake, Cookie, IceCream, Candy, Heart } from "lucide-react";
 
 const About = () => {
+  // Array of company images with their paths and names
+  const companyImages = [
+    {
+      path: "/src/assets/images/about-buisness/eastlogo.png",
+      name: "East Company",
+    },
+    {
+      path: "/src/assets/images/about-buisness/allstar-about.png",
+      name: "West Company",
+    },
+    {
+      path: "/src/assets/images/about-buisness/golden-crescent-about.png",
+      name: "North Company",
+    },
+    {
+      path: "/src/assets/images/about-business/southlogo.png",
+      name: "South Company",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
       {/* Hero Section with Profile Image */}
       <div className="container mx-auto px-4 py-16">
         <div className="relative">
           {/* Main Profile Image */}
-          <div className="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-pink-200 shadow-xl">
+          <div className="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-red-200 shadow-xl">
             <img
-              src="/api/placeholder/400/400"
+              src="/src/assets/images/profile/profile.jpg"
               alt="Business Owner"
               className="w-full h-full object-cover"
             />
           </div>
 
-          {/* Decorative Elements */}
+          {/* Decorative Elements using Lucide Icons */}
           <div className="absolute -top-4 -right-4">
-            <Heart className="text-pink-400 w-12 h-12" />
+            <Cake className="text-magicHot w-8 h-8 rotate-[35deg]" />
           </div>
           <div className="absolute -bottom-4 -left-4">
-            <Star className="text-yellow-400 w-12 h-12" />
+            <Cookie className="text-amber-700 w-8 h-8 rotate-[35]" />
+          </div>
+          <div className="absolute top-1/2 -right-4">
+            <IceCream className="text-magicPurple w-8 h-8 -rotate-[35deg]" />
+          </div>
+          <div className="absolute top-1/2 -left-4">
+            <Candy className="text-magicPink w-8 h-8 rotate-[90deg]" />
           </div>
         </div>
 
+        {/* Rest of the component remains the same */}
         {/* Owner Name and Title */}
         <div className="text-center mt-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
-            Sarah's Sweet Creations
-          </h1>
-          <p className="text-xl text-pink-600">
+          <h1 className="text-4xl font-bold text-gray-800">Claudia</h1>
+          <span className="text-[0.9rem] font-bold text-gray-800">Owner</span>
+          <p className="text-xl text-magicPink mt-4">
             Crafting Joy, One Dessert at a Time
           </p>
         </div>
@@ -41,17 +67,17 @@ const About = () => {
           </h2>
           <div className="space-y-4 text-gray-600">
             <p>
-              Welcome to my world of sweetness! I'm Sarah, a passionate pastry
-              chef with over a decade of experience in creating memorable
-              dessert experiences. My journey began in my grandmother's kitchen,
-              where I first discovered the magic of turning simple ingredients
-              into extraordinary treats.
+              Welcome to my world of sweetness! I'm Claudia, a passionate baker
+              with over a decade of experience in creating memorable dessert
+              experiences. My journey began in my grandmother's kitchen, where I
+              first discovered the magic of turning simple ingredients into
+              extraordinary treats.
             </p>
             <p>
-              What sets us apart is our commitment to using only the finest
+              What sets me apart is my commitment to using only the finest
               ingredients while incorporating innovative techniques to create
               desserts that are both visually stunning and incredibly delicious.
-              Every creation that leaves our kitchen is crafted with love,
+              Every creation that leaves my kitchen is crafted with love,
               attention to detail, and a touch of magic.
             </p>
           </div>
@@ -63,12 +89,12 @@ const About = () => {
             Proud to Serve
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((index) => (
+            {companyImages.map((company, index) => (
               <div key={index} className="aspect-square relative group">
                 <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 transform group-hover:scale-105">
                   <img
-                    src={`/api/placeholder/200/200`}
-                    alt={`Company ${index}`}
+                    src={company.path}
+                    alt={company.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
