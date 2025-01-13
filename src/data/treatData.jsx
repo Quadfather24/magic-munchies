@@ -1,7 +1,7 @@
 export const treatCategories = [
   {
     id: "cookies",
-    title: "Cookie Collection",
+    title: "Cookies",
     slides: [
       {
         key: 1,
@@ -140,7 +140,7 @@ export const treatCategories = [
   },
   {
     id: "cakes",
-    title: "Signature Cakes",
+    title: "Cakes",
     slides: [
       {
         key: 1,
@@ -208,7 +208,7 @@ export const treatCategories = [
   },
   {
     id: "pretzels",
-    title: "Dunk'd Pretzels",
+    title: "Pretzels",
     slides: [
       {
         key: 1,
@@ -364,7 +364,7 @@ export const treatCategories = [
   },
   {
     id: "cupcakes",
-    title: "Signature Cupcakes",
+    title: "Cupcakes",
     slides: [
       {
         key: 1,
