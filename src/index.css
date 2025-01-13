@@ -77,12 +77,6 @@
     }
   }
 
-  /* Responsive images */
-  img {
-    @apply max-w-full h-auto;
-    content-visibility: auto;
-  }
-
   /* Better form elements on mobile */
   @media (max-width: 640px) {
     input,
