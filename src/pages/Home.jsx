@@ -57,14 +57,6 @@ const LandingPage = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowDelayedButton(true);
-    }, 6000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   // Handle URL parameters
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -181,35 +173,6 @@ const LandingPage = () => {
       {/* Particle effect */}
       <div className="absolute inset-0 z-20">
         <ParticleEffect />
-      </div>
-
-      {/* Arrow pointing up */}
-      <div
-        className={`
-          fixed top-12 left-[27.99rem] -translate-x-1/2 z-[999] pointer-events-auto
-          transition-all duration-1000 ease-in-out
-          animate__animated animate__slideInUp animate__infinite animate__slow
-          ${
-            showDelayedButton
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
-          }
-        `}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="text-black"
-        >
-          <path d="M12 19V5M5 12l7-7 7 7" />
-        </svg>
       </div>
     </div>
   );

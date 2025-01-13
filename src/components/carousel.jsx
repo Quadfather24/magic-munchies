@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "@react-spring/web";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useSwipeable } from "react-swipeable"; // Add this import
+import { useSwipeable } from "react-swipeable";
 
 const TreatCarousel = ({ category, onSlideClick }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // Add state to track swipe animation
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleNextSlide = () => {
@@ -20,46 +19,36 @@ const TreatCarousel = ({ category, onSlideClick }) => {
     );
   };
 
-  // Configure swipe handlers with visual feedback
   const swipeHandlers = useSwipeable({
     onSwipeStart: () => {
-      // Indicate that a swipe is in progress
       setIsAnimating(true);
     },
     onSwipedLeft: () => {
-      // Navigate to next slide
       handleNextSlide();
-      // Reset animation after transition
       setTimeout(() => {
         setIsAnimating(false);
       }, 300);
     },
     onSwipedRight: () => {
-      // Navigate to previous slide
       handlePrevSlide();
-      // Reset animation after transition
       setTimeout(() => {
         setIsAnimating(false);
       }, 300);
     },
     onSwiping: (eventData) => {
-      // Add resistance to the swipe movement
       const moveX = eventData.deltaX * 0;
-      // Update the swipe offset for visual feedback
       document.documentElement.style.setProperty(
         "--carousel-swipe-offset",
         `${moveX}px`
       );
     },
     onSwipeEnd: () => {
-      // Reset the swipe offset when gesture ends
       document.documentElement.style.setProperty(
         "--carousel-swipe-offset",
         "0px"
       );
       setIsAnimating(false);
     },
-    // Configure swipe sensitivity and behavior
     preventDefaultTouchmoveEvent: true,
     trackMouse: false,
     delta: 50,
@@ -67,7 +56,6 @@ const TreatCarousel = ({ category, onSlideClick }) => {
     touchEventOptions: { passive: true },
   });
 
-  // Create carousel slides with swipe animation classes
   const carouselSlides = category.slides.map((slide) => ({
     key: slide.key,
     content: (
@@ -81,18 +69,19 @@ const TreatCarousel = ({ category, onSlideClick }) => {
           }
         }}
         className={`cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
-          transition-transform duration-300 ${
+          transition-transform duration-300 w-full ${
             isAnimating
               ? "transform translate-x-[var(--carousel-swipe-offset)]"
               : ""
           }`}
       >
-        <div className="relative w-full">
+        <div className="relative w-full max-w-screen-2xl mx-auto">
           <div className="aspect-w-16 aspect-h-9 sm:aspect-w-3 sm:aspect-h-2 md:aspect-w-16 md:aspect-h-9">
             <img
               src={slide.imageSrc}
               alt={slide.title}
-              className="w-full h-full object-contain rounded-lg shadow-md shadow-gray-900 transition-transform duration-300 transform hover:scale-105"
+              className="w-full h-full object-contain rounded-lg shadow-md shadow-gray-900 transition-transform duration-300 transform hover:scale-105 
+                       sm:w-11/12 sm:mx-auto md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-7/12"
               loading="lazy"
             />
           </div>
@@ -102,18 +91,17 @@ const TreatCarousel = ({ category, onSlideClick }) => {
   }));
 
   return (
-    <div className="relative flex flex-col w-full">
-      <div className="py-8 sm:py-12">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-center animate__animated animate__bounce animate__repeat-3">
+    <div className="relative flex flex-col w-full max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+      <div className="py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-center animate__animated animate__bounce animate__repeat-3">
           <span className="relative inline-block">
             <span className="relative">{category.title}</span>
           </span>
         </h2>
       </div>
 
-      {/* Add swipeHandlers to the carousel container */}
       <div className="relative w-full" {...swipeHandlers}>
-        <div className="h-64 sm:h-96 md:h-112 lg:h-128 px-4 sm:px-8 md:px-16 lg:px-24">
+        <div className="h-48 sm:h-64 md:h-80 lg:h-96 xl:h-112 2xl:h-128">
           <Carousel
             slides={carouselSlides}
             goToSlide={currentIndex}
@@ -123,20 +111,27 @@ const TreatCarousel = ({ category, onSlideClick }) => {
           />
         </div>
 
-        {/* Navigation buttons with Lucide icons */}
         <button
           onClick={handlePrevSlide}
-          className="absolute left-2 sm:left-4 md:left-8 lg:left-12 top-1/2 transform -translate-y-1/2 bg-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+          className="absolute left-0 sm:left-2 md:left-4 lg:left-6 xl:left-8 2xl:left-10 top-1/2 transform -translate-y-1/2 
+                   bg-white p-1 sm:p-2 md:p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 text-gray-700" strokeWidth={2} />
+          <ChevronLeft
+            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-700"
+            strokeWidth={2}
+          />
         </button>
         <button
           onClick={handleNextSlide}
-          className="absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 transform -translate-y-1/2 bg-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+          className="absolute right-0 sm:right-2 md:right-4 lg:right-6 xl:right-8 2xl:right-10 top-1/2 transform -translate-y-1/2 
+                   bg-white p-1 sm:p-2 md:p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 text-gray-700" strokeWidth={2} />
+          <ChevronRight
+            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-700"
+            strokeWidth={2}
+          />
         </button>
       </div>
     </div>
@@ -145,31 +140,18 @@ const TreatCarousel = ({ category, onSlideClick }) => {
 
 TreatCarousel.propTypes = {
   category: PropTypes.shape({
-    // The ID property from your original definition
     id: PropTypes.string.isRequired,
-
-    // The title property that's used in the h2 element
     title: PropTypes.string.isRequired,
-
-    // The slides array that's used in the carousel
     slides: PropTypes.arrayOf(
       PropTypes.shape({
-        // The key property used for mapping slides
         key: PropTypes.number.isRequired,
-
-        // The image source used in the img element
         imageSrc: PropTypes.string.isRequired,
-
-        // The title property used for alt text and accessibility
         title: PropTypes.string.isRequired,
-
-        // The description property used in the modal
         description: PropTypes.string.isRequired,
       })
     ).isRequired,
   }).isRequired,
-
-  // The click handler for slide interaction
   onSlideClick: PropTypes.func.isRequired,
 };
+
 export default TreatCarousel;
