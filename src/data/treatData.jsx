@@ -1,11 +1,7 @@
 export const treatCategories = [
   {
     id: "cookie",
-<<<<<<< HEAD
-    title: "🍪 Cookies",
-=======
     title: "🍪 Cookies 🍪",
->>>>>>> dd3b394 (added emoji to category titles of menu images.)
     slides: [
       {
         key: 1,
@@ -144,11 +140,7 @@ export const treatCategories = [
   },
   {
     id: "cake",
-<<<<<<< HEAD
-    title: "🎂 Cakes",
-=======
     title: "🎂 Cakes 🎂",
->>>>>>> dd3b394 (added emoji to category titles of menu images.)
     slides: [
       {
         key: 1,
@@ -216,11 +208,7 @@ export const treatCategories = [
   },
   {
     id: "pretzel",
-<<<<<<< HEAD
-    title: "🥨 Pretzels",
-=======
     title: "🥨 Pretzels 🥨",
->>>>>>> dd3b394 (added emoji to category titles of menu images.)
     slides: [
       {
         key: 1,
@@ -282,11 +270,7 @@ export const treatCategories = [
   },
   {
     id: "strawberry",
-<<<<<<< HEAD
-    title: "🍓 Strawberries",
-=======
     title: "🍓 Strawberries 🍓",
->>>>>>> dd3b394 (added emoji to category titles of menu images.)
     slides: [
       {
         key: 1,
@@ -356,11 +340,7 @@ export const treatCategories = [
   },
   {
     id: "cakepops",
-<<<<<<< HEAD
-    title: "💥 Cake Pops",
-=======
     title: "💥 Cake Pops 💥",
->>>>>>> dd3b394 (added emoji to category titles of menu images.)
     slides: [
       {
         key: 1,
@@ -384,11 +364,7 @@ export const treatCategories = [
   },
   {
     id: "cupcakes",
-<<<<<<< HEAD
-    title: "🧁 Cupcakes",
-=======
     title: "🧁 Cupcakes 🧁",
->>>>>>> dd3b394 (added emoji to category titles of menu images.)
     slides: [
       {
         key: 1,
@@ -428,11 +404,7 @@ export const treatCategories = [
   },
   {
     id: "specialty",
-<<<<<<< HEAD
-    title: "💓 Specialties",
-=======
     title: "💓 Specialties 💓",
->>>>>>> dd3b394 (added emoji to category titles of menu images.)
     slides: [
       {
         key: 1,
@@ -486,11 +458,7 @@ export const treatCategories = [
   },
   {
     id: "assortment",
-<<<<<<< HEAD
-    title: "🎉 Assortments",
-=======
     title: "🎉 Assortments 🎉",
->>>>>>> dd3b394 (added emoji to category titles of menu images.)
     slides: [
       {
         key: 1,

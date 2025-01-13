@@ -253,9 +253,9 @@ const TreatCarousel = ({
   return (
     <div className="w-full">
       <div
-        className={`flex flex-col w-full text-nowrap items-center justify-center min-h-[32.5rem] md:min-h-[56.5rem] max-w-screen-2xl mx-auto ${className}`}
+        className={`flex flex-col w-full text-nowrap items-center justify-center min-h-[32.5rem] md:min-h-[46.5rem] max-w-screen-2xl mx-auto ${className}`}
       >
-        <div className="mb-[5.96rem] sm:py-16 md:py-20 animate__animated animate__jackInTheBox animate__slow">
+        <div className="mb-[5.96rem] md:mb-[9.25rem] lg:mb-[6.96rem] animate__animated animate__jackInTheBox animate__slow">
           <h2 className="text-[2.4rem] sm:text-5xl md:text-7xl font-semibold text-center text-black flex items-center justify-center">
             <span>{category.title}</span>
           </h2>
