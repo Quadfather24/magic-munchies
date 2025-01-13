@@ -1,7 +1,7 @@
 export const treatCategories = [
   {
-    id: "cookies",
-    title: "Cookies",
+    id: "cookie",
+    title: "🍪 Cookies",
     slides: [
       {
         key: 1,
@@ -139,8 +139,8 @@ export const treatCategories = [
     ],
   },
   {
-    id: "cakes",
-    title: "Cakes",
+    id: "cake",
+    title: "🎂 Cakes",
     slides: [
       {
         key: 1,
@@ -207,8 +207,8 @@ export const treatCategories = [
     ],
   },
   {
-    id: "pretzels",
-    title: "Pretzels",
+    id: "pretzel",
+    title: "🥨 Pretzels",
     slides: [
       {
         key: 1,
@@ -269,13 +269,13 @@ export const treatCategories = [
     ],
   },
   {
-    id: "strawberries",
-    title: "Strawberries",
+    id: "strawberry",
+    title: "🍓 Strawberries",
     slides: [
       {
         key: 1,
         imageSrc: "/src/assets/images/strawberries/choc-dipped-pink.jpg",
-        title: "Pretty in Pink 🍓",
+        title: "Pretty in Pink ",
         description:
           "Gorgeous pink chocolate-dipped strawberries for a sweet delight.",
       },
@@ -340,7 +340,7 @@ export const treatCategories = [
   },
   {
     id: "cakepops",
-    title: "Cake Pops",
+    title: "💥 Cake Pops",
     slides: [
       {
         key: 1,
@@ -364,7 +364,7 @@ export const treatCategories = [
   },
   {
     id: "cupcakes",
-    title: "Cupcakes",
+    title: "🧁 Cupcakes",
     slides: [
       {
         key: 1,
@@ -404,7 +404,7 @@ export const treatCategories = [
   },
   {
     id: "specialty",
-    title: "Specialty",
+    title: "💓 Specialties",
     slides: [
       {
         key: 1,
@@ -457,8 +457,8 @@ export const treatCategories = [
     ],
   },
   {
-    id: "assortments",
-    title: "Assortments",
+    id: "assortment",
+    title: "🎉 Assortments",
     slides: [
       {
         key: 1,

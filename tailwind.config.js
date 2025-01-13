@@ -22,34 +22,31 @@ export default {
       spacing: {
         46: "11.5rem",
       },
-      // Add new transition properties for swipe animations
       transitionProperty: {
         swipe: "transform, opacity",
       },
-    },
-    // Add keyframes for smooth entrance/exit animations
-    keyframes: {
-      "slide-left": {
-        "0%": { transform: "translateX(0)" },
-        "100%": { transform: "translateX(-100%)" },
+      // Add the new keyframes for the X rotation
+      keyframes: {
+        "half-rotate": {
+          // Start position
+          "0%": { transform: "rotate(0deg)" },
+
+          "100%": { transform: "rotate(180deg)" },
+        },
       },
-      "slide-right": {
-        "0%": { transform: "translateX(0)" },
-        "100%": { transform: "translateX(100%)" },
+      // Add the new animation
+      animation: {
+        "slide-left": "slide-left 0.3s ease-in-out",
+        "slide-right": "slide-right 0.3s ease-in-out",
+        "x-rotate": "half-rotate 2s",
       },
-    },
-    // Add custom animation definitions
-    animation: {
-      "slide-left": "slide-left 0.3s ease-in-out",
-      "slide-right": "slide-right 0.3s ease-in-out",
     },
   },
-  // Make sure we can use all these animations
   safelist: [
     "animate-slide-left",
     "animate-slide-right",
     "translate-x-[var(--swipe-offset)]",
+    "animate-x-rotate", // Add the new animation to safelist
   ],
-
   plugins: [],
 };

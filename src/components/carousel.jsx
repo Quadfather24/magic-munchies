@@ -1,7 +1,6 @@
 import { useState, useCallback, memo, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Carousel from "react-spring-3d-carousel";
-import { config } from "@react-spring/web";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "animate.css";
 import { useSwipeable } from "react-swipeable";
@@ -88,12 +87,12 @@ const CarouselImage = memo(({ slide, isActive, onClick }) => {
       <div className="relative w-full h-full max-w-screen-2xl mx-auto">
         <div className="flex flex-col items-center h-full">
           {/* Title container with animated underline */}
-          <div className=" justify-center sm:mb-10 md:mb-12 text-center w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 mt-4">
+          <div className="justify-center sm:mb-4 md:mb-6 text-center w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 mt-2">
             <h3 className=" text-base text-nowrap sm:text-lg md:text-xl lg:text-2xl font-medium mb-3 sm:mb-3">
               {slide.title}
             </h3>
             <div
-              className={`h-0.5  bg-magicTeal transition-all duration-500 ease-out mx-auto
+              className={`h-0.5  bg-magicPink transition-all duration-500 ease-out mx-auto
                 ${showUnderline ? "w-10/12 m-3 sm:w-4/5 md:w-3/4" : "w-0"}
               `}
             />
@@ -107,8 +106,7 @@ const CarouselImage = memo(({ slide, isActive, onClick }) => {
               ref={imgRef}
               src={slide.imageSrc}
               alt={slide.title}
-              className={`w-full h-full object-contain rounded-lg 
-                         transition-all duration-300 ease-out
+              className={`w-full h-full object-contain rounded-md shadow-sm shadow-zinc-00                   transition-all duration-300 ease-out
                          ${sourceLoaded ? "opacity-100" : "opacity-0"}`}
               loading={isActive ? "eager" : "lazy"}
               decoding="async"
@@ -147,6 +145,15 @@ const TreatCarousel = ({
   const [isAnimating, setIsAnimating] = useState(false);
   const autoPlayTimeoutRef = useRef(null);
 
+  const smoothConfig = {
+    mass: 1,
+    tension: 170,
+    friction: 26,
+    clamp: false,
+    precision: 0.01,
+    velocity: 0,
+  };
+
   // Use custom hooks
   usePerformanceTracking("TreatCarousel");
   useImagePreload(currentIndex, category.slides);
@@ -173,23 +180,44 @@ const TreatCarousel = ({
     }
   }, [autoPlay, isAnimating, autoPlayInterval, handleAutoPlay]);
 
-  // Navigation handlers
+  const ANIMATION_DURATION = 400; // Increased from 300ms for smoother transitions
+
+  // Navigation handlers with improved timing
   const handleNextSlide = useCallback(() => {
+    // Don't start new animation if one is in progress
     if (isAnimating) return;
+
+    // Start animation phase
     setIsAnimating(true);
+
+    // Update the current index, wrapping around to start if at end
     setCurrentIndex((prevIndex) => (prevIndex + 1) % category.slides.length);
-    setTimeout(() => setIsAnimating(false), 300);
+
+    // Allow animation to complete before enabling next transition
+    setTimeout(() => {
+      setIsAnimating(false);
+      // Small buffer added after animation completes for smoother feel
+    }, ANIMATION_DURATION + 50);
   }, [category.slides.length, isAnimating]);
 
   const handlePrevSlide = useCallback(() => {
+    // Don't start new animation if one is in progress
     if (isAnimating) return;
+
+    // Start animation phase
     setIsAnimating(true);
+
+    // Update current index, wrapping to end if at start
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? category.slides.length - 1 : prevIndex - 1
     );
-    setTimeout(() => setIsAnimating(false), 300);
-  }, [category.slides.length, isAnimating]);
 
+    // Allow animation to complete before enabling next transition
+    setTimeout(() => {
+      setIsAnimating(false);
+      // Small buffer added after animation completes for smoother feel
+    }, ANIMATION_DURATION + 50);
+  }, [category.slides.length, isAnimating]);
   // Swipe handlers
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleNextSlide,
@@ -214,21 +242,25 @@ const TreatCarousel = ({
 
   return (
     <div
-      className={`bg-magic-gradient flex flex-col w-full min-h-screen max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 ${className}`}
+      className={`flex flex-col w-full mt-6 min-h-[28.3rem] max-w-screen-2xl mx-auto ${className}`}
     >
       <div
-        className="py-12 sm:py-16 md:py-20 animate__animated animate__rubberBand
-        animate__delay-1s  
-        animate__repeat-3
-              
-
-      "
+        className="
+  py-12 sm:py-16 md:py-20
+  animate__animated animate__rubberBand
+  animate__delay-1s animate__repeat-3
+"
       >
-        <h2 className="text-4xl sm:text-2xl md:text-3xl font-semibold text-center text-magicPink">
-          {category.title}
+        <h2
+          className="
+    text-4xl sm:text-5xl md:text-8xl
+    font-semibold text-center text-magicPink
+    flex items-center justify-center gap-2 sm:gap-3 md:gap-4
+  "
+        >
+          <span>{category.title}</span>
         </h2>
       </div>
-
       <div
         className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96"
         {...swipeHandlers}
@@ -240,8 +272,8 @@ const TreatCarousel = ({
         <Carousel
           slides={carouselSlides}
           goToSlide={currentIndex}
-          offsetRadius={2}
-          animationConfig={config.gentle}
+          offsetRadius={1}
+          animationConfig={smoothConfig}
           showNavigation={false}
         />
 
