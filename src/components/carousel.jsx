@@ -155,7 +155,6 @@ const TreatCarousel = ({
   const [isAnimating, setIsAnimating] = useState(false);
   const [removeBounceAnimation, setRemoveBounceAnimation] = useState(false);
   const autoPlayTimeoutRef = useRef(null);
-  const swipeStartRef = useRef(null);
 
   // Enhanced spring animation configuration for smoother transitions
   const smoothConfig = {
@@ -228,11 +227,12 @@ const TreatCarousel = ({
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleNextSlide,
     onSwipedRight: handlePrevSlide,
-    preventDefaultTouchmoveEvent: true,
+    preventDefaultTouchmoveEvent: false, // Allow vertical scrolling
     trackMouse: false,
-    delta: 50,
-    swipeDuration: 300,
+    delta: 20, // Increase minimum swipe distance
+    swipeDuration: 700, // Increase swipe duration threshold
     touchEventOptions: { passive: true },
+    trackTouch: true,
   });
 
   // Prepare slides with proper props

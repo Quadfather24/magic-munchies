@@ -2,6 +2,7 @@ import { useState } from "react";
 import TreatCarousel from "../components/carousel";
 import TreatModal from "../components/modal";
 import { treatCategories } from "../data/treatData";
+import BubbleBackground from "../components/BubbleBackground";
 
 export default function Menu() {
   // Track both the selected slide and its category
@@ -49,7 +50,7 @@ export default function Menu() {
   };
 
   return (
-    <div>
+    <BubbleBackground>
       {treatCategories.map((category) => (
         <TreatCarousel
           key={category.id}
@@ -66,6 +67,6 @@ export default function Menu() {
           onPrevious={handlePreviousSlide}
         />
       )}
-    </div>
+    </BubbleBackground>
   );
 }
