@@ -27,7 +27,7 @@ const About = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="relative">
           {/* Main Profile Image */}
-          <div className="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-red-200 shadow-xl">
+          <div className="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-magicPurple shadow-xl">
             <img
               src="/src/assets/images/profile/profile.jpg"
               alt="Business Owner"
@@ -55,7 +55,7 @@ const About = () => {
         <div className="text-center mt-8">
           <h1 className="text-4xl font-bold text-gray-800">Claudia</h1>
           <span className="text-[0.9rem] font-bold text-gray-800">Owner</span>
-          <p className="text-xl text-magicPink mt-4">
+          <p className="text-xl text-magicPurple mt-4">
             Crafting Joy, One Dessert at a Time
           </p>
         </div>

@@ -21,7 +21,7 @@ const CarouselButton = memo(
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`absolute ${
+      className={`absolute hidden sm:block ${
         direction === "left"
           ? "left-0 sm:left-2 md:left-4 lg:left-6 xl:left-8 2xl:left-10"
           : "right-0 sm:right-2 md:right-4 lg:right-6 xl:right-8 2xl:right-10"
@@ -100,7 +100,7 @@ const CarouselImage = memo(
               </h3>
               <div
                 className={`h-0.5 bg-magicPink transition-all duration-500 ease-out mx-auto mb-9 mt-0
-                ${showUnderline ? "w-11/12 sm:w-4/5 md:w-3/4" : "w-0"}
+                ${showUnderline ? "w-full" : "w-0"}
               `}
               />
             </div>
@@ -235,7 +235,7 @@ const TreatCarousel = ({
     trackTouch: true,
   });
 
-  // Prepare slides with proper props
+  // Prepare slides with props
   const carouselSlides = category.slides.map((slide, index) => ({
     key: slide.key,
     content: (
@@ -281,7 +281,7 @@ const TreatCarousel = ({
                 onClick={handlePrevSlide}
                 disabled={isAnimating}
               >
-                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-700" />
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gray-700" />
               </CarouselButton>
 
               <CarouselButton
@@ -289,7 +289,7 @@ const TreatCarousel = ({
                 onClick={handleNextSlide}
                 disabled={isAnimating}
               >
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-700" />
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h7 text-gray-700" />
               </CarouselButton>
             </>
           )}

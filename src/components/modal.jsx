@@ -52,7 +52,7 @@ const NavigationButton = memo(({ direction, onClick, children }) => {
       className={`absolute ${
         direction === "left" ? "left-4" : "right-4"
       } top-1/2 transform -translate-y-1/2 
-      bg-white p-2 rounded-full shadow-lg 
+      bg-white p-[0.1rem] rounded-full shadow-lg 
       hover:bg-gray-100 transition-colors z-10
       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-magicTeal`}
       aria-label={`${direction === "left" ? "Previous" : "Next"} slide`}
