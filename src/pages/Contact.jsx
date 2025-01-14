@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import "animate.css";
+import contact1 from "../assets/images/background/contact1.svg";
+import contact from "../assets/images/background/contact.svg";
 
 function ContactPage() {
   useEffect(() => {
@@ -31,9 +33,19 @@ function ContactPage() {
   }, []);
 
   return (
-    <div className="min-h-screen  w-full h-full mx-auto bg-contactImage1 bg-cover bg-center bg-no-repeat overflow-x-hidden">
+    <div
+      className="min-h-screen  w-full h-full mx-auto bg-cover bg-center bg-no-repeat overflow-x-hidden"
+      style={{
+        backgroundImage: `url(${contact1})`,
+      }}
+    >
       {/* Hero Section */}
-      <div className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-contactImage bg-cover bg-center bg-no-repeat bg-magicTeal">
+      <div
+        className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-cover bg-center bg-no-repeat bg-magicTeal"
+        style={{
+          backgroundImage: `url(${contact})`,
+        }}
+      >
         <div className="text-center mb-7">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text mb-4">
             Let's Connect

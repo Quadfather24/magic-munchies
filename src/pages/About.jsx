@@ -4,32 +4,32 @@ const About = () => {
   // Array of company images with their paths and names
   const companyImages = [
     {
-      path: "/src/assets/images/about-buisness/eastlogo.png",
+      path: "/images/about-buisness/eastlogo.png",
       name: "East Company",
     },
     {
-      path: "/src/assets/images/about-buisness/allstar-about.png",
+      path: "/images/about-buisness/allstar-about.png",
       name: "West Company",
     },
     {
-      path: "/src/assets/images/about-buisness/golden-crescent-about.png",
+      path: "/images/about-buisness/golden-crescent-about.png",
       name: "North Company",
     },
     {
-      path: "/src/assets/images/about-buisness/iconic-about.jpg",
+      path: "/images/about-buisness/iconic-about.jpg",
       name: "South Company",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b bg-magic-gradient">
+    <div className="min-h-screen bg-magic-gradient">
       {/* Hero Section with Profile Image */}
       <div className="container mx-auto px-4 py-16">
         <div className="relative">
           {/* Main Profile Image */}
           <div className="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-magicPurple shadow-xl">
             <img
-              src="/src/assets/images/profile/profile.jpg"
+              src="/images/profile/profile.jpeg"
               alt="Business Owner"
               className="w-full h-full object-cover"
             />
