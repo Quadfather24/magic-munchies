@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import "animate.css";
+// Restore the critical image imports
 import contact1 from "../assets/images/background/contact1.svg";
 import contact from "../assets/images/background/contact.svg";
 
 function ContactPage() {
-  // State to track if images are loaded
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    // Preload images
+    // Image preloading logic - ensures smooth loading of background images
     const imageUrls = [contact1, contact];
     let loadedImages = 0;
 
-    // Create preload link tags
     const head = document.head;
     imageUrls.forEach((url) => {
       const link = document.createElement("link");
@@ -22,7 +23,6 @@ function ContactPage() {
       head.appendChild(link);
     });
 
-    // Load images in memory
     imageUrls.forEach((url) => {
       const img = new Image();
       img.src = url;
@@ -34,50 +34,80 @@ function ContactPage() {
       };
     });
 
-    // Intersection Observer setup
+    // Smooth scroll detection with debouncing to prevent excessive updates
+    let timeoutId;
+    const handleScroll = () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        const currentScrollY = window.scrollY;
+        setScrollDirection(currentScrollY > lastScrollY ? "down" : "up");
+        setLastScrollY(currentScrollY);
+      }, 50);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Enhanced Intersection Observer with spring-like animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const element = entry.target;
+
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            // Apply enhanced spring-like animations for smooth entry
+            element.style.opacity = "1";
+            element.style.transform = "translateX(0) scale(1)";
+            element.style.transition =
+              "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)";
           } else {
-            entry.target.classList.remove("show");
+            // Smooth exit animations with subtle scale effect
+            if (element.classList.contains("slide-left")) {
+              element.style.transform = "translateX(-50px) scale(0.95)";
+            } else if (element.classList.contains("slide-right")) {
+              element.style.transform = "translateX(50px) scale(0.95)";
+            }
+            element.style.opacity = "0";
+            element.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
           }
         });
       },
       {
-        root: null,
-        threshold: 0,
-        rootMargin: "0px",
+        threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        rootMargin: "-5% 0px -5% 0px",
       }
     );
 
-    // Observe slide elements
     const slideElements = document.querySelectorAll(".slide-element");
-    slideElements.forEach((el) => observer.observe(el));
+    slideElements.forEach((el) => {
+      el.style.willChange = "transform, opacity";
+      observer.observe(el);
+    });
 
-    // Cleanup
+    // Cleanup function to prevent memory leaks
     return () => {
       observer.disconnect();
-      // Remove preload links on unmount
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeoutId);
       const links = document.head.querySelectorAll(
         'link[rel="preload"][as="image"]'
       );
       links.forEach((link) => link.remove());
     };
-  }, []);
+  }, [lastScrollY]);
 
-  // Apply loading state styles
+  // Background styles with smooth fade-in transitions
   const containerStyle = {
     backgroundImage: `url(${contact1})`,
     opacity: imagesLoaded ? 1 : 0,
-    transition: "opacity 0.3s ease-in",
+    transition: "opacity 0.5s ease-in-out",
   };
 
   const heroStyle = {
     backgroundImage: `url(${contact})`,
     opacity: imagesLoaded ? 1 : 0,
-    transition: "opacity 0.3s ease-in",
+    transition: "opacity 0.5s ease-in-out",
   };
 
   return (
@@ -85,31 +115,29 @@ function ContactPage() {
       className="min-h-screen w-full h-full mx-auto bg-cover bg-center bg-no-repeat overflow-x-hidden"
       style={containerStyle}
     >
-      {/* Hero Section */}
+      {/* Hero Section with enhanced animations */}
       <div
         className="w-full h-screen flex items-center justify-center sticky top-0 z-10 bg-cover bg-center bg-no-repeat bg-magicTeal"
         style={heroStyle}
       >
         <div className="text-center mb-7">
-          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text mb-4">
-            Let's Connect
-          </h1>
-          <p className="text-black text-xl animate__animated animate__fadeInDown">
+          <p className="mt-9 text-black text-xl animate__animated animate__fadeInUp animate__delay-2s">
             Scroll down
           </p>
-          <div className="animate__animated animate__fadeOutDown animate__infinite animate__slow">
+          <div className="mt-7 animate__animated animate__bounce animate__infinite animate__slow animate__delay-3s">
             <span className="text-black text-4xl">↓</span>
           </div>
         </div>
       </div>
 
+      {/* Content sections with transparent containers */}
       <div className="relative z-20 px-4 py-12 space-y-32">
         {/* Facebook Section */}
-        <div className="slide-element slide-left max-w-4xl mx-auto opacity-0 -translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-white">
+        <div className="slide-element slide-left max-w-4xl mx-auto opacity-0 -translate-x-full">
+          <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/30 p-8 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-white/10">
             <div className="flex flex-col items-center space-y-4">
-              <div className="text-blue-600 text-5xl">
-                <i className="fab fa-facebook animate__animated animate__bounce animate__infinite"></i>
+              <div className="text-blue-700 text-5xl">
+                <i className="fab fa-facebook animate__animated animate__bounce animate__infinite animate__slow"></i>
               </div>
               <h2 className="text-2xl font-bold text-white">
                 Connect on Facebook
@@ -119,7 +147,7 @@ function ContactPage() {
               </p>
               <a
                 href="https://www.facebook.com/groups/265346302113024/?ref=share&mibextid=NSMWBT"
-                className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 hover:ring-2 hover:ring-white"
+                className="mt-2 px-6 py-2 bg-white/90 text-blue-600 rounded-full font-semibold hover:bg-white transition-all duration-300"
               >
                 Visit Our Page
               </a>
@@ -128,11 +156,11 @@ function ContactPage() {
         </div>
 
         {/* Email Section */}
-        <div className="slide-element slide-right max-w-4xl mx-auto opacity-0 translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-magicTeal/20 to-slate-800/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-2 hover:ring-white">
+        <div className="slide-element slide-right max-w-4xl mx-auto opacity-0 translate-x-full">
+          <div className="bg-gradient-to-br from-magicTeal/10 to-slate-800/30 p-8 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-white/10">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-white text-5xl">
-                <i className="far fa-envelope animate__animated animate__bounce animate__infinite"></i>
+                <i className="far fa-envelope animate__animated animate__bounce animate__infinite animate__slow"></i>
               </div>
               <h2 className="text-2xl font-bold text-white">Email Us</h2>
               <p className="text-white text-lg max-w-md text-center">
@@ -140,7 +168,7 @@ function ContactPage() {
               </p>
               <a
                 href="mailto:claudiastreats21@gmail.com"
-                className="mt-2 px-6 py-2 bg text-white rounded-full font-semibold bg-zinc-600 hover:text-black hover:bg-magicTeal hover:ring-2 hover:ring-white transition-colors duration-300"
+                className="mt-2 px-6 py-2 bg-white/90 text-slate-800 rounded-full font-semibold hover:bg-white transition-all duration-300"
               >
                 claudiastreats21@gmail.com
               </a>
@@ -149,11 +177,11 @@ function ContactPage() {
         </div>
 
         {/* Phone Section */}
-        <div className="slide-element slide-left max-w-4xl mx-auto opacity-0 -translate-x-full transition-all duration-1000">
-          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 hover:ring-1 hover:ring-white">
+        <div className="slide-element slide-left max-w-4xl mx-auto opacity-0 -translate-x-full">
+          <div className="bg-gradient-to-br from-green-500/10 to-emerald-600/30 p-8 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-white/10">
             <div className="flex flex-col items-center space-y-4">
               <div className="text-green-600 text-5xl">
-                <i className="fas fa-phone animate__animated animate__bounce animate__infinite"></i>
+                <i className="fas fa-phone animate__animated animate__bounce animate__infinite animate__slow"></i>
               </div>
               <h2 className="text-2xl font-bold text-white">Call Us</h2>
               <p className="text-white text-lg max-w-md text-center">
@@ -161,20 +189,20 @@ function ContactPage() {
               </p>
               <a
                 href="tel:+13616522470"
-                className="mt-2 px-6 py-2 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300 hover:ring-2 hover:ring-white animate-"
+                className="mt-2 px-6 py-2 bg-white/90 text-green-600 rounded-full font-semibold hover:bg-white transition-all duration-300"
               >
                 +1 (361) 652-2470
               </a>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Footer */}
-        <div className="text-center pt-8">
-          <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Magic Munchies. All rights reserved.
-          </p>
-        </div>
+      {/* Footer */}
+      <div className="text-center pt-8">
+        <p className="text-sm text-white">
+          © {new Date().getFullYear()} Magic Munchies. All rights reserved.
+        </p>
       </div>
     </div>
   );

@@ -1,65 +1,101 @@
+import { useState, useEffect } from "react";
 import { Coffee, Cake, Cookie, IceCream, Candy, Heart } from "lucide-react";
 
 const About = () => {
-  // Array of company images with their paths, names, and blur data URLs
+  // State to manage image loading
+  const [profileLoaded, setProfileLoaded] = useState(false);
+  const [companyImagesLoaded, setCompanyImagesLoaded] = useState({});
+
+  // Define image paths - Note: These should be imported if using a bundler like webpack/vite
+  // or referenced from the public directory if using Next.js
+  const PROFILE_IMAGE = "/images/profile/profile.jpeg";
+
   const companyImages = [
     {
       path: "/images/about-buisness/eastlogo.png",
       name: "East Company",
-      blurDataUrl: "/api/placeholder/400/400", // Using placeholder for blur effect
       width: 400,
       height: 400,
     },
     {
       path: "/images/about-buisness/allstar-about.png",
       name: "West Company",
-      blurDataUrl: "/api/placeholder/400/400",
       width: 400,
       height: 400,
     },
     {
       path: "/images/about-buisness/golden-crescent-about.png",
       name: "North Company",
-      blurDataUrl: "/api/placeholder/400/400",
       width: 400,
       height: 400,
     },
     {
       path: "/images/about-buisness/iconic-about.jpg",
       name: "South Company",
-      blurDataUrl: "/api/placeholder/400/400",
       width: 400,
       height: 400,
     },
   ];
 
+  useEffect(() => {
+    // Preload profile image
+    const img = new Image();
+    img.src = PROFILE_IMAGE;
+    img.onload = () => {
+      setProfileLoaded(true);
+    };
+
+    // Preload company images
+    companyImages.forEach((company, index) => {
+      const img = new Image();
+      img.src = company.path;
+      img.onload = () => {
+        setCompanyImagesLoaded((prev) => ({
+          ...prev,
+          [index]: true,
+        }));
+      };
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-magic-gradient">
       <div className="container mx-auto px-4 py-16">
         <div className="relative">
-          {/* Main Profile Image - Optimized */}
-          <div className="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-magicPurple shadow-xl">
+          {/* Profile Image with Loading State */}
+          <div className="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-magicPurple shadow-xl relative">
+            {/* Loading placeholder */}
+            <div
+              className="absolute inset-0 bg-gray-200 transition-opacity duration-300"
+              style={{ opacity: profileLoaded ? 0 : 1 }}
+            />
             <img
-              src="/images/profile/profile.jpeg"
+              src={PROFILE_IMAGE}
               alt="Business Owner"
-              className="w-full h-full object-cover"
-              loading="eager" // Load immediately as it's above the fold
+              className="w-full h-full object-cover transition-opacity duration-300"
+              style={{
+                opacity: profileLoaded ? 1 : 0,
+                position: "relative",
+                zIndex: 1,
+              }}
               width={320}
               height={320}
+              onLoad={() => setProfileLoaded(true)}
+              fetchPriority="high"
             />
           </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute -top-4 -right-4">
+          {/* Decorative Elements - Positioned absolutely relative to profile */}
+          <div className="absolute -top-4 -right-4 z-10">
             <Cake className="text-magicHot w-8 h-8 rotate-12" />
           </div>
-          <div className="absolute -bottom-4 -left-4">
+          <div className="absolute -bottom-4 -left-4 z-10">
             <Cookie className="text-amber-700 w-8 h-8 rotate-12" />
           </div>
-          <div className="absolute top-1/2 -right-4">
+          <div className="absolute top-1/2 -right-4 z-10">
             <IceCream className="text-magicPurple w-8 h-8 -rotate-12" />
           </div>
-          <div className="absolute top-1/2 -left-4">
+          <div className="absolute top-1/2 -left-4 z-10">
             <Candy className="text-magicPink w-8 h-8 rotate-90" />
           </div>
         </div>
@@ -95,7 +131,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Optimized Company Images Grid */}
+        {/* Company Images Grid with Loading States */}
         <div className="mt-16">
           <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
             Proud to Serve
@@ -104,15 +140,29 @@ const About = () => {
             {companyImages.map((company, index) => (
               <div key={index} className="aspect-square relative group">
                 <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 transform group-hover:scale-105">
+                  {/* Loading placeholder */}
+                  <div
+                    className="absolute inset-0 bg-gray-200 transition-opacity duration-300"
+                    style={{ opacity: companyImagesLoaded[index] ? 0 : 1 }}
+                  />
                   <img
                     src={company.path}
                     alt={company.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
+                    className="w-full h-full object-cover transition-opacity duration-300"
+                    style={{
+                      opacity: companyImagesLoaded[index] ? 1 : 0,
+                      position: "relative",
+                      zIndex: 1,
+                    }}
                     width={company.width}
                     height={company.height}
-                    placeholder="blur"
-                    blurdataurl={company.blurDataUrl}
+                    onLoad={() =>
+                      setCompanyImagesLoaded((prev) => ({
+                        ...prev,
+                        [index]: true,
+                      }))
+                    }
+                    loading="lazy"
                   />
                 </div>
               </div>
