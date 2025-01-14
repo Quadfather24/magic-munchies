@@ -16,13 +16,13 @@ const About = () => {
       name: "North Company",
     },
     {
-      path: "/src/assets/images/about-business/southlogo.png",
+      path: "/src/assets/images/about-buisness/iconic-about.jpg",
       name: "South Company",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b bg-magic-gradient">
       {/* Hero Section with Profile Image */}
       <div className="container mx-auto px-4 py-16">
         <div className="relative">
@@ -106,21 +106,21 @@ const About = () => {
         {/* Highlights Section */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
-            <Coffee className="mx-auto text-pink-500 w-12 h-12 mb-4" />
+            <Coffee className="mx-auto text-magicPink w-12 h-12 mb-4" />
             <h3 className="font-bold text-gray-800 mb-2">Custom Orders</h3>
             <p className="text-gray-600">
               Personalized desserts crafted to your exact specifications
             </p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
-            <Cake className="mx-auto text-pink-500 w-12 h-12 mb-4" />
+            <Cake className="mx-auto text-magicPink w-12 h-12 mb-4" />
             <h3 className="font-bold text-gray-800 mb-2">Fresh Daily</h3>
             <p className="text-gray-600">
               Made fresh every morning with premium ingredients
             </p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
-            <Heart className="mx-auto text-pink-500 w-12 h-12 mb-4" />
+            <Heart className="mx-auto text-magicPink w-12 h-12 mb-4" />
             <h3 className="font-bold text-gray-800 mb-2">Made with Love</h3>
             <p className="text-gray-600">
               Every dessert is crafted with passion and care

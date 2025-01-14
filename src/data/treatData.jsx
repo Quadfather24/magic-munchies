@@ -6,135 +6,268 @@ export const treatCategories = [
       {
         key: 1,
         imageSrc: "/src/assets/images/cookies/6-sun-cookie.jpg",
-        title: "Sunflower 🌻",
-        description: "Hand-decorated sugar cookies with a sunny design 😊",
+        title: "Sunflower Sunshine 🌻",
+        description:
+          "Hand-decorated sugar cookies with a warm, sunny design that’ll brighten your day! ☀️",
       },
       {
         key: 2,
         imageSrc: "/src/assets/images/cookies/aggie-cookies.jpg",
-        title: "Aggie Party 🎉",
-        description: "Aggie themed cookies for a 30-year old birthday! 🎂",
+        title: "Aggie Party Bash 🎉",
+        description:
+          "Aggie-themed cookies for an epic 30th birthday celebration! Let the party begin! 🎂",
       },
       {
         key: 3,
         imageSrc: "/src/assets/images/cookies/roblox.jpg",
-        title: "Roblox Fun 🎮",
-        description: "Roblox themed cookies for 6-year old Evan 🎂",
+        title: "Roblox Adventure 🎮",
+        description:
+          "Roblox-inspired cookies that bring 6-year-old Evan’s favorite game to life! 🎉",
       },
       {
         key: 4,
         imageSrc: "/src/assets/images/cookies/sweet-15.jpg",
-        title: "Sweet Strawberry 🍓",
+        title: "Sweet 15 Strawberry Dream 🍓",
         description:
-          "Amazing sweet 15 strawberry & birthday themed cookies, You only turn 15 once!",
+          "Celebrate the sweetness of turning 15 with strawberry and birthday-themed cookies! 🍰",
       },
       {
         key: 5,
         imageSrc: "/src/assets/images/cookies/pig.jpg",
-        title: "Farm Pig 🐖",
+        title: "Farmyard Fun 🐖",
         description:
-          "Celebrate the countryside with these adorable pig cookies!",
+          "These adorable pig cookies will have you oinking with joy! Perfect for any farm lover. 🐷",
       },
       {
         key: 6,
         imageSrc: "/src/assets/images/cookies/unicorn-cookies.jpg",
-        title: "Enchanted Unicorns 🦄",
-        description: "Magical unicorn cookies w/ rainbows.",
+        title: "Unicorn Magic 🦄",
+        description:
+          "Magical unicorns and rainbows all in one delicious bite. Pure enchantment! 🌈",
       },
       {
         key: 7,
         imageSrc: "/src/assets/images/cookies/badbunny.jpg",
-        title: "Bad Bunny Vibes 🎶",
+        title: "Bad Bunny Beats 🎶",
         description:
-          "Feel the music with these vibrant Bad Bunny birthday cookies!",
+          "Feel the rhythm with vibrant Bad Bunny-inspired birthday cookies for the ultimate music lover! 🎉",
       },
       {
         key: 8,
         imageSrc: "/src/assets/images/cookies/horror.jpg",
-        title: "Horror Thrills 👻",
-        description: "Collection of Horror Movie Characters",
+        title: "Horror Night Thrills 👻",
+        description:
+          "Get spooked with these chilling cookies featuring your favorite horror movie icons. 👹",
       },
       {
         key: 9,
         imageSrc: "/src/assets/images/cookies/flower.jpg",
-        title: "Flower Power 🌸",
-        description: "Pastel Pink Flowers with Leaf Attached",
+        title: "Flower Power Burst 🌸",
+        description:
+          "Pastel pink flowers with a touch of nature’s beauty, perfect for any flower lover! 🌿",
       },
       {
         key: 10,
         imageSrc: "/src/assets/images/cookies/allstar-cookies.jpg",
-        title: "All-Star Fades ✂️",
-        description: "Local Barbershop in Victoria,Tx",
+        title: "All-Star Shave ✂️",
+        description:
+          "Fresh fades and sharp cuts, all in cookie form, celebrating Victoria’s top barbershop! 💈",
       },
       {
         key: 11,
         imageSrc: "/src/assets/images/cookies/baseball.jpg",
-        title: "Baseball Fever ⚾",
-        description: "Swing into sweetness with these baseball-themed cookies!",
+        title: "Baseball Bonanza ⚾",
+        description:
+          "Hit a home run with these baseball-themed cookies—perfect for any fan of the game! ⚾",
       },
       {
         key: 12,
-        imageSrc: "/src/assets/images/cookies/butterfly.jpg",
-        title: "Butterfly Dreams 🦋",
-        description: "Delicate butterfly cookies for a whimsical treat.",
+        imageSrc: "/src/assets/images/cookies/pumpkin.jpg",
+        title: "Halloween Hauntings 🎃",
+        description:
+          "Get ready for spooky fun with Halloween-themed cookies that bring the fright! 👻",
       },
       {
         key: 13,
         imageSrc: "/src/assets/images/cookies/dino.jpg",
-        title: "Dino Roars 🦕",
+        title: "Dino Party Roars 🦕",
         description:
-          "3-year old Mateo's Birthday Dinosaur Themed Cookies W/ Cracked Dinosaur Eggs! ",
+          "Roar into fun with dinosaur-themed cookies for Mateo’s birthday—cracked dino eggs included! 🥚",
       },
       {
         key: 14,
         imageSrc: "/src/assets/images/cookies/grad-ccokies.jpg",
-        title: "Graduation Cheers 🎓",
-        description: "Celebrate success with these grad-themed cookies!",
+        title: "Graduate’s Glory 🎓",
+        description:
+          "Celebrate success with these graduation-themed cookies—a sweet treat for your big day! 🎉",
       },
       {
         key: 15,
         imageSrc: "/src/assets/images/cookies/halloween-cookie.jpg",
-        title: "Spooky Sweets 🎃",
+        title: "Spooky Sweets & Treats 🎃",
         description:
-          "Halloween-inspired cookies perfect for trick-or-treat fun!",
+          "Halloween-inspired cookies to give you all the tricks and treats! 🍬",
       },
       {
         key: 16,
         imageSrc: "/src/assets/images/cookies/ninjaTurtle.jpg",
-        title: "Ninja Turtle Power 🐢",
-        description: "Shell-tastic cookies for all the TMNT fans.",
+        title: "Turtle Power Cookies 🐢",
+        description:
+          "Cowabunga! These Ninja Turtle cookies are perfect for any TMNT fan. 🐢",
       },
       {
         key: 17,
         imageSrc: "/src/assets/images/cookies/halloween2.jpg",
-        title: "Fright Night 🍬",
-        description: "Frightfully fun cookies for a haunting good time.",
+        title: "Fright Night Delights 🍬",
+        description:
+          "Frightfully delicious Halloween cookies for a hauntingly good time! 🎃",
       },
       {
         key: 18,
         imageSrc: "/src/assets/images/cookies/pink-dipped.jpg",
-        title: "Pink Dipped 💖",
-        description: "Bright pink-dipped cookies that sparkle with sweetness.",
+        title: "Pretty in Pink 💖",
+        description:
+          "Bright pink-dipped cookies that add a touch of sparkle and sweetness to any occasion. ✨",
       },
       {
         key: 19,
         imageSrc: "/src/assets/images/cookies/tuxedo.jpg",
-        title: "Dapper Tux 🕴️",
+        title: "Dapper & Sweet 🕴️",
         description:
-          "Suit up your sweet tooth with these elegantly iced cookies.",
+          "Elegantly iced cookies to match your classy style—perfect for any refined occasion! 👔",
       },
       {
         key: 20,
         imageSrc: "/src/assets/images/cookies/white.jpg",
-        title: "White Delight 🤍",
+        title: "White Wonder 🤍",
         description:
-          "Classic white iced cookies for a touch of simple elegance.",
+          "Classic white iced cookies for a simple yet elegant touch to your dessert table. 🌟",
       },
       {
         key: 21,
         imageSrc: "/src/assets/images/cookies/spider-cake.jpg",
-        title: "Spider Cake 🕷️",
-        description: "Creepy-crawly sweetness for spider-lovers.",
+        title: "Spider Cake Spooks 🕷️",
+        description:
+          "Creepy-crawly sweetness that’s perfect for all the spider enthusiasts out there! 🕸️",
+      },
+      {
+        key: 22,
+        imageSrc: "/src/assets/images/cookies/16-cookie.jpg",
+        title: "Neon Heartbeat 💖",
+        description:
+          "Neon heart-shaped cookies to celebrate a vibrant 16th birthday with style and flair! 💓",
+      },
+      {
+        key: 23,
+        imageSrc: "/src/assets/images/cookies/america.jpg",
+        title: "All-American Celebration 🇺🇸",
+        description:
+          "Red, white, and blue cookie cake that’s perfect for a patriotic party! 🎆",
+      },
+      {
+        key: 24,
+        imageSrc: "/src/assets/images/cookies/america1.jpg",
+        title: "Stars and Stripes Delight 🎇",
+        description:
+          "A red, white, and blue cookie cake to celebrate America’s birthday with sweet pride! 🇺🇸",
+      },
+      {
+        key: 25,
+        imageSrc: "/src/assets/images/cookies/andrew-cookies.jpg",
+        title: "Harley Ride Cookies 🏍️",
+        description:
+          "Perfect for any Harley Davidson fan, these cookies are a ride into deliciousness! 🏍️",
+      },
+      {
+        key: 26,
+        imageSrc: "/src/assets/images/cookies/araceli.jpg",
+        title: "Araceli’s Big Day 🎉",
+        description:
+          "A sweet treat to celebrate Araceli’s 8th birthday, full of fun and flavor! 🎂",
+      },
+      {
+        key: 27,
+        imageSrc: "/src/assets/images/cookies/butterfly coookies.jpg",
+        title: "Butterfly Kisses 🦋",
+        description:
+          "Celebrate Mother’s Day with these beautiful butterfly cookies that are as sweet as they are delicate. 💕",
+      },
+      {
+        key: 28,
+        imageSrc: "/src/assets/images/cookies/dinosaur1.jpg",
+        title: "Dinosaur Eyes & Eggs 🦖",
+        description:
+          "Dinosaur-themed cookies that’ll have you cracking up—just like the dino eggs! 🥚",
+      },
+      {
+        key: 29,
+        imageSrc: "/src/assets/images/cookies/dogs.jpg",
+        title: "Blue’s Clues Sweetness 🐾",
+        description:
+          "Pink and blue cookies that bring Blue’s Clues to life with every bite! 🐶",
+      },
+      {
+        key: 30,
+        imageSrc: "/src/assets/images/cookies/flower.jpg",
+        title: "Pink Blossom Perfection 🌸",
+        description:
+          "Delicate and beautiful pink blossoms that will brighten any occasion! 🌷",
+      },
+      {
+        key: 31,
+        imageSrc: "/src/assets/images/cookies/ghostbusters.jpg",
+        title: "Ghostbusters' Sweet Catch 👻",
+        description:
+          "Who you gonna call? Sweet, spooky cookies for all the Ghostbusters fans out there! 🛸",
+      },
+      {
+        key: 32,
+        imageSrc: "/src/assets/images/cookies/grad-ccokies.jpg",
+        title: "Class of 2023 Cheers 🎓",
+        description:
+          "Celebrate the achievement with these Class of 2023 cookies—perfect for a memorable graduation! 🎉",
+      },
+      {
+        key: 33,
+        imageSrc: "/src/assets/images/cookies/home-ccokies.jpg",
+        title: "Home Sweet Disney 🏰",
+        description:
+          "A sprinkle of Disney magic in every bite with these whimsical home-themed cookies! ✨",
+      },
+      {
+        key: 34,
+        imageSrc: "/src/assets/images/cookies/tooth-cookie.jpg",
+        title: "Golden Crescent Dental & Orthodontics 🦷",
+        description:
+          "Smile and enjoy these golden crescent dental-themed cookies, perfect for a sweet tooth! 🦷",
+      },
+      {
+        key: 35,
+        imageSrc: "/src/assets/images/cookies/selena-cookies.jpg",
+        title: "Selena’s Star Power 🌟",
+        description:
+          "These cookies sing to the sweet sound of Selena’s music—perfect for any fan! 🎶",
+      },
+      {
+        key: 36,
+        imageSrc: "/src/assets/images/cookies/soliz-cookies.jpg",
+        title: "Wedding Bells 🍰",
+        description:
+          "Celebrate the upcoming nuptials with these romantic cookies—perfect for an engagement! 💍",
+      },
+      {
+        key: 37,
+        imageSrc: "/src/assets/images/cookies/softball.jpg",
+        title: "Softball Glow ⚾",
+        description:
+          "Bright neon yellow softball cookies that are perfect for the sporty sweet tooth! 🌟",
+      },
+      {
+        key: 38,
+        imageSrc: "/src/assets/images/cookies/rustic-ranch.jpg",
+        title: "Rustic Ranch 🏡",
+        description:
+          "Perfect for bar lovers, these rustic ranch-themed cookies bring the countryside right to your table. 🍺",
       },
     ],
   },
@@ -182,27 +315,17 @@ export const treatCategories = [
       },
       {
         key: 7,
-        imageSrc: "/src/assets/images/cakes/",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/cakes/baby-shower-cake.jpg",
+        title: "Baby's First Cake 🎉",
+        description:
+          "Celebrate the joy of a new arrival with this adorable baby shower cake! 👶",
       },
       {
         key: 8,
-        imageSrc: "/src/assets/images/cakes/",
-        title: "",
-        description: "",
-      },
-      {
-        key: 9,
-        imageSrc: "/src/assets/images/cakes/",
-        title: "",
-        description: "",
-      },
-      {
-        key: 10,
-        imageSrc: "/src/assets/images/cakes/",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/cakes/dos-equies.jpg",
+        title: "Dos Equis Fiesta 🍻",
+        description:
+          "A fun fiesta cake inspired by Dos Equis for the ultimate celebration! 🎉",
       },
     ],
   },
@@ -231,48 +354,6 @@ export const treatCategories = [
       {
         key: 4,
         imageSrc: "/src/assets/images/candy-apples/Encanto.jpg",
-        title: "",
-        description: "",
-      },
-      {
-        key: 5,
-        imageSrc: "/src/assets/images/candy-apples",
-        title: "",
-        description: "",
-      },
-      {
-        key: 6,
-        imageSrc: "/src/assets/images/candy-apples",
-        title: "",
-        description: "",
-      },
-      {
-        key: 7,
-        imageSrc: "/src/assets/images/candy-apples",
-        title: "",
-        description: "",
-      },
-      {
-        key: 8,
-        imageSrc: "/src/assets/images/candy-apples",
-        title: "",
-        description: "",
-      },
-      {
-        key: 9,
-        imageSrc: "/src/assets/images/candy-apples",
-        title: "",
-        description: "",
-      },
-      {
-        key: 10,
-        imageSrc: "/src/assets/images/candy-apples",
-        title: "",
-        description: "",
-      },
-      {
-        key: 1,
-        imageSrc: "/src/assets/images/candy-apples",
         title: "",
         description: "",
       },
@@ -310,33 +391,17 @@ export const treatCategories = [
       },
       {
         key: 5,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/pretzels/baby-shark.jpg",
+        title: "Baby Shark Bites 🦈",
+        description:
+          "Dive into fun with these Baby Shark-inspired pretzels—perfect for any party! 🎶",
       },
       {
         key: 6,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
-      },
-      {
-        key: 7,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
-      },
-      {
-        key: 8,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
-      },
-      {
-        key: 9,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/pretzels/teal.jpg",
+        title: "Teal Temptations 💙",
+        description:
+          "Cool teal-colored pretzels that are as beautiful as they are tasty.",
       },
     ],
   },
@@ -347,7 +412,7 @@ export const treatCategories = [
       {
         key: 1,
         imageSrc: "/src/assets/images/strawberries/choc-dipped-pink.jpg",
-        title: "Pretty in Pink ",
+        title: "Pretty in Pink 💖",
         description:
           "Gorgeous pink chocolate-dipped strawberries for a sweet delight.",
       },
@@ -374,39 +439,24 @@ export const treatCategories = [
       },
       {
         key: 5,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/strawberries/purple-straw.jpg",
+        title: "Purple Passion 💜",
+        description:
+          "Rich, purple chocolate-dipped strawberries that are a feast for the eyes and taste buds.",
       },
       {
         key: 6,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/strawberries/spiderman-straw.jpg",
+        title: "Web of Sweetness 🕸️",
+        description:
+          "Spider-Man inspired strawberries that are as fun as they are delicious!",
       },
       {
         key: 7,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
-      },
-      {
-        key: 8,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
-      },
-      {
-        key: 9,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
-      },
-      {
-        key: 10,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/strawberries/teal-straw.jpg",
+        title: "Teal Temptations 💙",
+        description:
+          "Cool teal chocolate-covered strawberries that are a treat for both the eyes and taste buds.",
       },
     ],
   },
@@ -422,15 +472,41 @@ export const treatCategories = [
       },
       {
         key: 2,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/cake-pops/spidey-pops.jpg",
+        title: "Spidey Sweets 🕸️",
+        description: "Spider-Man cake pops that are heroically delicious.",
       },
       {
         key: 3,
-        imageSrc: "/src/assets/images",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/cake-pops/pig-pops.jpg",
+        title: "Piggy Pops 🐷",
+        description: "Adorable pig-shaped cake pops for a fun and tasty treat.",
+      },
+      {
+        key: 4,
+        imageSrc: "/src/assets/images/cake-pops/ninja-pops.jpg",
+        title: "Ninja Power Pops 🐢",
+        description: "Ninja Turtle cake pops that bring out your inner hero!",
+      },
+      {
+        key: 5,
+        imageSrc: "/src/assets/images/cake-pops/marble-pops.jpg",
+        title: "Marble Magic 🎨",
+        description:
+          "Swirls of marble cake pops that are as beautiful as they are delicious.",
+      },
+      {
+        key: 6,
+        imageSrc: "/src/assets/images/cake-pops/pink.jpg",
+        title: "Pink Perfection 💖",
+        description:
+          "Soft and sweet pink cake pops that will steal your heart.",
+      },
+      {
+        key: 7,
+        imageSrc: "/src/assets/images/cake-pops/purple-sprinkle.jpg",
+        title: "Purple Sprinkle Bliss 💜",
+        description: "Vibrant purple cake pops topped with playful sprinkles.",
       },
     ],
   },
@@ -467,10 +543,22 @@ export const treatCategories = [
       },
       {
         key: 5,
-        imageSrc: "/src/assets/images/cupcakes/naruto-cupcake.jpg",
-        title: "Naruto Reloaded 🌀",
+        imageSrc: "/src/assets/images/cupcakes/nightmare.jpg",
+        title: "Nightmare Delight 🎃",
+        description: "Spooky, sweet cupcakes perfect for a Halloween thrill.",
+      },
+      {
+        key: 6,
+        imageSrc: "/src/assets/images/cupcakes/blood-cupcake.jpg",
+        title: "Blood Red Bites 🩸",
+        description: "Spookily delicious cupcakes with a blood-red theme.",
+      },
+      {
+        key: 7,
+        imageSrc: "/src/assets/images/cupcakes/dinosaur-cupcake.jpg",
+        title: "Dino Treats 🦖",
         description:
-          "Another round of ninja-inspired cupcakes for the biggest fans.",
+          "Fossil-fueled cupcakes for all the little dinosaur lovers! 🦕",
       },
     ],
   },
@@ -516,15 +604,29 @@ export const treatCategories = [
       },
       {
         key: 7,
-        imageSrc: "/src/assets/images/specialty/goldApple.jpg",
-        title: "Golden Apple 🍎",
-        description: "Sparkling gold apple treat for a touch of luxury.",
+        imageSrc: "/src/assets/images/specialty/baby-shark-crispy.jpg",
+        title: "Baby Shark Bites 🦈",
+        description: "2-year sharky celebration! 🌊",
       },
       {
         key: 8,
-        imageSrc: "/src/assets/images/",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/specialty/specialty3.jpg",
+        title: "Mystery Delight 🌟",
+        description: "A mysterious treat that will surprise your taste buds.",
+      },
+      {
+        key: 9,
+        imageSrc: "/src/assets/images/specialty/specialty4.jpg",
+        title: "Sweet Symphony 🎶",
+        description:
+          "A harmonious blend of flavors that dance together in perfect sweetness.",
+      },
+      {
+        key: 10,
+        imageSrc: "/src/assets/images/specialty/specialty5.jpg",
+        title: "Heavenly Indulgence 🍫",
+        description:
+          "Indulge in a bite of pure sweetness that will take you to heaven.",
       },
     ],
   },
@@ -535,9 +637,9 @@ export const treatCategories = [
       {
         key: 1,
         imageSrc: "/src/assets/images/assortments/assortment5.jpg",
-        title: "Specialty Spread 🍭",
+        title: "Minnie Mouse 🐭",
         description:
-          "A colorful spread featuring a variety of specialty sweets.",
+          "Delight in Minnie Mouse-inspired treats for any occasion.",
       },
       {
         key: 2,
@@ -560,9 +662,77 @@ export const treatCategories = [
       },
       {
         key: 5,
-        imageSrc: "/src/assets/images/assortments/",
-        title: "",
-        description: "",
+        imageSrc: "/src/assets/images/assortments/assorted2.jpg",
+        title: "Wedding Delight 💍",
+        description:
+          "An elegant assortment perfect for your wedding celebration.",
+      },
+      {
+        key: 6,
+        imageSrc: "/src/assets/images/assortments/assortment4.jpg",
+        title: "Rainbow Vibes 🌈",
+        description: "A colorful collection that brings all the rainbow vibes.",
+      },
+      {
+        key: 8,
+        imageSrc: "/src/assets/images/assortments/assorted6.jpg",
+        title: "Blue 15th Birthday 🎉",
+        description: "A sweet blue-themed treat for a fabulous 15th birthday.",
+      },
+      {
+        key: 9,
+        imageSrc: "/src/assets/images/assortments/assorted7.jpg",
+        title: "3-Year-Old Princess Pink 👑",
+        description:
+          "A royal pink assortment to celebrate a 3-year-old princess.",
+      },
+      {
+        key: 10,
+        imageSrc: "/src/assets/images/assortments/assorted8.jpg",
+        title: "Floral Butterfly Quinceañera 🦋",
+        description:
+          "Celebrate a Quinceañera with these elegant floral butterfly treats.",
+      },
+      {
+        key: 11,
+        imageSrc: "/src/assets/images/assortments/assorted9.jpg",
+        title: "Teal 16th Birthday 🎂",
+        description: "Teal-themed sweets for a sweet 16 birthday celebration.",
+      },
+      {
+        key: 12,
+        imageSrc: "/src/assets/images/assortments/assorted10.jpg",
+        title: "Teal 16th Birthday Part 2 🎉",
+        description:
+          "A continuation of teal-themed treats for the ultimate birthday bash.",
+      },
+      {
+        key: 13,
+        imageSrc: "/src/assets/images/assortments/assorted11.jpg",
+        title: "Mermaid Pink, Blue, Purple 🧜‍♀️",
+        description:
+          "A magical mermaid assortment in pink, blue, and purple hues.",
+      },
+      {
+        key: 14,
+        imageSrc: "/src/assets/images/assortments/assorted-12.jpg",
+        title: "White Green Blue Wedding 💍",
+        description:
+          "A pristine assortment perfect for a wedding celebration in white, green, and blue.",
+      },
+      {
+        key: 15,
+        imageSrc: "/src/assets/images/assortments/assorted13.jpg",
+        title: "White and Brown Texas State 🤠",
+        description:
+          "A tasteful mix of white and brown treats for Texas pride.",
+      },
+      {
+        key: 16,
+        imageSrc: "/src/assets/images/assortments/assorted.jpg",
+        title: "White Drizzle with Pink Pearls 💖",
+        description:
+          "Elegant white drizzle topped with pink pearls for a refined treat.",
       },
     ],
   },
