@@ -348,14 +348,14 @@ export const treatCategories = [
       {
         key: 3,
         imageSrc: "/images/candy-apples/butterfly-apples.jpg",
-        title: "",
+        title: "Butterfly Delight",
         description: "",
       },
       {
         key: 4,
         imageSrc: "/images/candy-apples/Encanto.jpg",
-        title: "",
-        description: "",
+        title: "Encanto",
+        description: "Go on a adventure with a disney favorite Encanto!",
       },
     ],
   },
