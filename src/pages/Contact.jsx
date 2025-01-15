@@ -121,11 +121,11 @@ function ContactPage() {
         style={heroStyle}
       >
         <div className="text-center mb-7">
-          <p className="mt-9 text-black text-xl animate__animated animate__fadeInUp animate__delay-2s">
+          <p className="mt-20 text-black text-xl animate__animated animate__fadeInUp animate__delay-2s">
             Scroll down
           </p>
-          <div className="mt-7 animate__animated animate__bounce animate__infinite animate__slow animate__delay-3s">
-            <span className="text-black text-4xl">↓</span>
+          <div className="mt-6 animate__animated animate__bounce animate__infinite animate__slow animate__delay-3s">
+            <span className="text-black text-2xl">↓</span>
           </div>
         </div>
       </div>
