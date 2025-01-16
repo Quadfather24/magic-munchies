@@ -39,6 +39,8 @@ export default {
         "slide-left": "slide-left 0.3s ease-in-out",
         "slide-right": "slide-right 0.3s ease-in-out",
         "x-rotate": "half-rotate 2s",
+
+        "bounce-slow": "bounce 3s linear infinite",
       },
     },
   },

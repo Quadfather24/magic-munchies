@@ -4,6 +4,7 @@ import Carousel from "react-spring-3d-carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "animate.css";
 import { useSwipeable } from "react-swipeable";
+import Title from "../components/Title";
 import {
   carouselProps,
   defaultCarouselProps,
@@ -48,11 +49,9 @@ CarouselButton.displayName = "CarouselButton";
 
 // Individual carousel image component
 const CarouselImage = memo(
-  ({ slide, isActive, onClick, removeBounceAnimation }) => {
+  ({ slide, isActive, onClick, removeBounceAnimation, category }) => {
     const { sourceLoaded, error } = useProgressiveImage(slide.imageSrc);
-    const imgRef = useRef(null);
     const [showUnderline, setShowUnderline] = useState(false);
-
     // Handle underline animation for active slide
     useEffect(() => {
       if (isActive) {
@@ -99,7 +98,7 @@ const CarouselImage = memo(
                 {slide.title}
               </h3>
               <div
-                className={`h-0.5 bg-magicPink transition-all duration-500 ease-out mx-auto mb-9 mt-0
+                className={`h-0.5 bg-black transition-all duration-500 ease-out mx-auto mb-9 mt-0
                 ${showUnderline ? "w-full" : "w-0"}
               `}
               />
@@ -110,7 +109,6 @@ const CarouselImage = memo(
                 <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg" />
               )}
               <img
-                ref={imgRef}
                 src={slide.imageSrc}
                 alt={slide.title}
                 className={`object-contain rounded-md shadow-sm shadow-zinc-800
@@ -118,11 +116,6 @@ const CarouselImage = memo(
                          ${sourceLoaded ? "opacity-100" : "opacity-0"}`}
                 loading={isActive ? "eager" : "lazy"}
                 decoding="async"
-                sizes="(max-width: 640px) 100vw,
-                     (max-width: 768px) 91.666667%,
-                     (max-width: 1024px) 83.333333%,
-                     (max-width: 1280px) 75%,
-                     66.666667%"
               />
             </div>
           </div>
@@ -251,12 +244,11 @@ const TreatCarousel = ({
   return (
     <div className="w-full">
       <div
-        className={`flex flex-col w-full pb-[8rem] text-balance items-center justify-center min-h-[32.5rem] md:min-h-[46.5rem] max-w-screen-2xl mx-auto${className}`}
+        className={`flex flex-col w-full pb-[8rem] text-balance items-center justify-center min-h-[32.5rem] md:min-h-[46.5rem] max-w-screen-2xl mx-auto pt-8 ${className}`}
       >
-        <div className="mb-[5.96rem] md:mb-[9.25rem] lg:mb-[6.96rem] animate__animated animate__jackInTheBox animate__slow">
-          <h2 className="text-[2.4rem] sm:text-5xl md:text-7xl font-semibold text-center text-black flex items-center justify-center">
-            <span>{category.title}</span>
-          </h2>
+        <div className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-28 animate__animated animate__jackInTheBox animate__slow">
+          <Title category={category} />
+          <div className="absolute bottom-[17px] left-1/2 transform -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-magicTeal to-transparent"></div>
         </div>
         <div
           className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96"

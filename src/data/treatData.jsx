@@ -1,7 +1,7 @@
 export const treatCategories = [
   {
     id: "cookie",
-    title: "🍪 Cookies 🍪",
+    title: "Cookies",
     slides: [
       {
         key: 1,
@@ -273,7 +273,7 @@ export const treatCategories = [
   },
   {
     id: "cake",
-    title: "🎂 Cakes 🎂",
+    title: "Cakes",
     slides: [
       {
         key: 1,
@@ -331,7 +331,7 @@ export const treatCategories = [
   },
   {
     id: "candy-apple",
-    title: "🍎 Apples 🍎",
+    title: "Candy Apples",
     slides: [
       {
         key: 1,
@@ -361,7 +361,7 @@ export const treatCategories = [
   },
   {
     id: "pretzel",
-    title: "🥨 Pretzels 🥨",
+    title: "Pretzels",
     slides: [
       {
         key: 1,
@@ -407,7 +407,7 @@ export const treatCategories = [
   },
   {
     id: "strawberry",
-    title: "🍓 Strawberries 🍓",
+    title: "Strawberries",
     slides: [
       {
         key: 1,
@@ -462,7 +462,7 @@ export const treatCategories = [
   },
   {
     id: "cakepops",
-    title: "💥 Cake Pops 💥",
+    title: "Cake Pops",
     slides: [
       {
         key: 1,
@@ -512,7 +512,7 @@ export const treatCategories = [
   },
   {
     id: "cupcakes",
-    title: "🧁 Cupcakes 🧁",
+    title: "Cupcakes",
     slides: [
       {
         key: 1,
@@ -564,7 +564,7 @@ export const treatCategories = [
   },
   {
     id: "specialty",
-    title: "💓 Specialties 💓",
+    title: "Specialties",
     slides: [
       {
         key: 1,
@@ -632,7 +632,7 @@ export const treatCategories = [
   },
   {
     id: "assortment",
-    title: "🎉 Assortments 🎉",
+    title: "Assortments",
     slides: [
       {
         key: 1,
